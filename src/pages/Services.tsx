@@ -140,7 +140,7 @@ const servicesData = [
   }
 ];
 
-export const Services: React.FC<ServicesProps> = ({ handleNavClick }) => {
+export const Services: React.FC<ServicesProps> = () => {
   const [activeSection, setActiveSection] = useState<string>('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const location = useLocation();

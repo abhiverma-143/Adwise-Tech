@@ -1,5 +1,5 @@
 import React from 'react';
-import { } from 'lucide-react'; 
+import { MapPin, Phone, Mail } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { ContactFormCard } from '../components/ContactFormCard';
 

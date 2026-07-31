@@ -34,7 +34,7 @@ const heroHeadings = [
   <>We Build You <br /><span className={gradientText}>High-Converting Websites</span></>,
 ];
 
-const heroSubtext = [
+const heroSubtext = [ 
   "Data-driven SEO strategies that put your business on Page 1 of Google — driving consistent, high-quality organic traffic that converts into real customers.",
   "Engaging content and targeted campaigns across Instagram, Facebook & more — growing your audience and turning followers into loyal, paying customers.",
   "Industry-relevant, hands-on digital marketing courses with certification and placement support — helping you build real, job-ready skills.",

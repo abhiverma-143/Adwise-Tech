@@ -1,6 +1,6 @@
 import {
   Search, MousePointer, Monitor, PenTool, BarChart2, Megaphone,
-  Users, TrendingUp, Rocket, Award, Target, Shield, Briefcase, Smile
+  Users, TrendingUp, Rocket, Target, Shield, Briefcase, Smile
 } from 'lucide-react';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
 import type { 

@@ -167,7 +167,7 @@ export const ContactFormCard: React.FC = () => {
           whileTap={{ scale: 0.98 }}
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[#E91E8C] hover:bg-[#C2185B] text-white font-bold rounded-xl py-3.5 text-sm transition-colors flex items-center justify-center gap-1.5 disabled:opacity-85 shadow-md"
+          className="w-full bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-bold rounded-full py-3.5 text-sm transition-colors flex items-center justify-center gap-1.5 disabled:opacity-85 shadow-md"
         >
           {isSubmitting ? (
             <>

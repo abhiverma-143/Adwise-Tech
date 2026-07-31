@@ -10,7 +10,8 @@ import {
   Globe,
   Palette,
   TrendingUp,
-  Megaphone
+  Megaphone,
+  GraduationCap
 } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -20,29 +21,35 @@ interface HeroSectionProps {
 const heroSlides = [
   { img: '/hero_slide_1.png', label: 'SEO & Analytics Dashboard', tag: 'Search Engine Optimization' },
   { img: '/hero_slide_2.png', label: 'Social Media Growth Strategy', tag: 'Social Media Marketing' },
-  { img: '/hero_slide_3.png', label: 'PPC Campaigns & ROI Tracking', tag: 'Performance Marketing' },
+  { img: '/hero_slide_4.png', label: 'Certified Digital Marketing Courses', tag: 'Learn & Grow' },
+  { img: '/hero_slide_5.png', label: 'Fast, Conversion-Ready Websites', tag: 'Website Development' },
 ];
 
+const gradientText = "bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent";
+
 const heroHeadings = [
-  <>We Rank You <br /><span className="text-brand-primary">Higher on Google</span></>,
-  <>We Grow Your <br /><span className="text-brand-primary">Social Media</span></>,
-  <>We Maximise <br /><span className="text-brand-primary">Your Ad ROI</span></>,
+  <>We Rank You <br /><span className={gradientText}>Higher on Google</span></>,
+  <>We Grow Your <br /><span className={gradientText}>Social Media</span></>,
+  <>We Train You <br /><span className={gradientText}>For Digital Marketing</span></>,
+  <>We Build You <br /><span className={gradientText}>High-Converting Websites</span></>,
 ];
 
 const heroSubtext = [
   "Data-driven SEO strategies that put your business on Page 1 of Google — driving consistent, high-quality organic traffic that converts into real customers.",
   "Engaging content and targeted campaigns across Instagram, Facebook & more — growing your audience and turning followers into loyal, paying customers.",
-  "Smart PPC and performance marketing campaigns that squeeze every rupee of value — maximising conversions and delivering measurable ROI on your ad spend.",
+  "Industry-relevant, hands-on digital marketing courses with certification and placement support — helping you build real, job-ready skills.",
+  "Fast, responsive, and SEO-friendly websites built to convert visitors into customers — designed and developed to reflect your brand.",
 ];
 
 const chips = [
-  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media" },
-  { icon: <Search className="w-3 h-3 text-brand-primary" />, label: "SEO" },
-  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads" },
-  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev" },
-  { icon: <Palette className="w-3 h-3 text-brand-primary" />, label: "Graphic Design" },
-  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance" },
-  { icon: <Megaphone className="w-3 h-3 text-brand-primary" />, label: "Offline Marketing" }
+  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "social-media" },
+  { icon: <Search className="w-3 h-3 text-brand-primary" />, label: "SEO", id: "seo" },
+  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc-ads" },
+  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "website-dev" },
+  { icon: <Palette className="w-3 h-3 text-brand-primary" />, label: "Graphic Design", id: "graphic-design" },
+  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance" },
+  { icon: <Megaphone className="w-3 h-3 text-brand-primary" />, label: "Offline Marketing", id: "offline-marketing" },
+  { icon: <GraduationCap className="w-3 h-3 text-brand-primary" />, label: "Courses", id: "courses" },
 ];
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
@@ -56,8 +63,34 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
   }, []);
 
   return (
-    <section id="home" className="relative bg-white pt-16 pb-8 lg:py-24 overflow-hidden transition-colors duration-300">
+    <section id="home" className="relative bg-white pt-16 pb-24 lg:pb-36 overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 dot-grid opacity-75 z-0" />
+
+      {/* Decorative gradient wave — bottom left — fixed so it stays visible across the whole home page scroll */}
+      <svg
+        className="fixed -bottom-1 left-0 w-full h-[130px] lg:h-[190px] z-0 pointer-events-none opacity-40"
+        viewBox="0 0 1512 320"
+        preserveAspectRatio="none"
+        fill="none"
+      >
+        <path
+          d="M0,140 C 260,40 520,260 820,180 C 1080,110 1300,240 1512,150 L1512,320 L0,320 Z"
+          fill="url(#heroWaveGradient)"
+        />
+        <defs>
+          <linearGradient id="heroWaveGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#FF7A9C" />
+            <stop offset="50%" stopColor="#FFAA7A" />
+            <stop offset="100%" stopColor="#C08AF0" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      {/* Decorative gradient corner — bottom right — fixed for the same reason */}
+      <div
+        className="fixed -bottom-24 -right-24 w-72 h-72 rounded-full z-0 pointer-events-none opacity-40"
+        style={{ background: 'linear-gradient(135deg, #C08AF0 0%, #FF7A9C 100%)' }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -72,7 +105,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             {/* Location Badge — static */}
             <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-4 py-1.5 inline-flex items-center gap-2 w-max mb-3">
               <MapPin className="w-3 h-3 text-brand-primary" />
-              <span className="text-[11px] font-bold text-brand-primary uppercase tracking-wider">
+              <span className="text-[11px] font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase tracking-wider">
                 Digital Marketing Agency, Bhopal
               </span>
             </div>
@@ -95,19 +128,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
               </motion.div>
             </AnimatePresence>
 
-            {/* Services Chips Row — static */}
+            {/* Services Chips Row — now clickable, navigates to the matching service */}
             <div className="flex flex-wrap gap-2 mb-8">
               {chips.map((chip, idx) => (
-                <motion.div
+                <motion.button
                   key={idx}
+                  type="button"
+                  onClick={() => handleNavClick(chip.id)}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.96 }}
                   transition={{ duration: 0.3, delay: idx * 0.05, ease: "easeOut" }}
-                  className="bg-brand-light border border-brand-border rounded-full px-2.5 py-1 lg:px-3 lg:py-1.5 text-[11px] lg:text-xs font-medium text-brand-secondary flex items-center gap-1.5"
+                  className="bg-brand-light border border-brand-border rounded-full px-2.5 py-1 lg:px-3 lg:py-1.5 text-[11px] lg:text-xs font-medium text-brand-secondary flex items-center gap-1.5 cursor-pointer hover:border-brand-primary hover:text-brand-primary transition-colors"
                 >
                   {chip.icon}
                   <span>{chip.label}</span>
-                </motion.div>
+                </motion.button>
               ))}
             </div>
 
@@ -119,7 +156,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
                 onClick={() => handleNavClick('contact-page')}
                 className="w-full sm:w-auto text-center justify-center flex items-center bg-brand-cta hover:bg-brand-ctaHover text-white font-bold text-sm px-8 py-3.5 rounded-full shadow-md transition-colors"
               >
-                Get Free Consultation →
+                Get Consultation →
               </motion.button>
               <button
                 onClick={() => handleNavClick('services')}

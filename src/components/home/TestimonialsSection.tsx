@@ -10,7 +10,6 @@ interface TestimonialsSectionProps {
 export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handleNavClick }) => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [sectionVisible, setSectionVisible] = useState(false);
   const total = testimonials.length;
 
   useEffect(() => {
@@ -20,28 +19,6 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
     }, 4000);
     return () => clearInterval(timer);
   }, [paused, total]);
-
-  useEffect(() => {
-    const cards = document.querySelectorAll('.testimonial-card');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setSectionVisible(true);
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, index * 120);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    cards.forEach(card => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, []);
 
   const handlePrev = () => {
     setCurrent((prev) => (prev === 0 ? total - 1 : prev - 1));
@@ -69,11 +46,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-3">
+          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
             Testimonials
           </span>
           <h2 className="font-display font-black text-brand-navy text-3xl leading-tight">
-            What Our Happy <span className="text-brand-primary">Clients Say</span>
+            What Our Happy <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Clients Say</span>
           </h2>
         </motion.div>
 
@@ -112,12 +89,12 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
                 className="grid grid-cols-3 gap-5"
               >
                 {visibleCards.map((t, idx) => (
-                  <div
+                  <motion.div
                     key={t.id}
-                    style={{
-                      transitionDelay: sectionVisible ? `${idx * 120}ms` : '0ms'
-                    }}
-                    className={`testimonial-card group bg-white border border-brand-border rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-left relative overflow-hidden h-[300px] flex flex-col justify-between ${sectionVisible ? 'visible' : ''}`}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: idx * 0.1, ease: "easeOut" }}
+                    className="testimonial-card group bg-white border border-brand-border rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-left relative overflow-hidden h-[300px] flex flex-col justify-between"
                   >
                     {/* Left border accent */}
                     <div className="absolute top-0 bottom-0 left-0 w-[3px] bg-brand-primary" />
@@ -155,10 +132,10 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
                       <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.2 }}
-                        className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] text-brand-primary rounded-full px-3 py-1 text-xs font-bold mb-4 w-max cursor-default"
+                        className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] rounded-full px-3 py-1 text-xs font-bold mb-4 w-max cursor-default"
                       >
-                        <TrendingUp className="w-3 h-3" />
-                        {t.metric}
+                        <TrendingUp className="w-3 h-3 text-brand-primary" />
+                        <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{t.metric}</span>
                       </motion.div>
 
                       {/* Divider */}
@@ -183,7 +160,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
                         <CheckCircle className="w-4 h-4 text-brand-primary ml-auto flex-shrink-0" />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </motion.div>
             </AnimatePresence>
@@ -198,7 +175,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className={`testimonial-card group bg-white border border-brand-border rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-left relative overflow-hidden h-[300px] flex flex-col justify-between ${sectionVisible ? 'visible' : ''}`}
+                className="testimonial-card group bg-white border border-brand-border rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.06)] text-left relative overflow-hidden h-[300px] flex flex-col justify-between"
               >
                 {/* Left border accent */}
                 <div className="absolute top-0 bottom-0 left-0 w-[3px] bg-brand-primary" />
@@ -236,10 +213,10 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
-                    className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] text-brand-primary rounded-full px-3 py-1 text-xs font-bold mb-4 w-max cursor-default"
+                    className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] rounded-full px-3 py-1 text-xs font-bold mb-4 w-max cursor-default"
                   >
-                    <TrendingUp className="w-3 h-3" />
-                    {testimonials[current].metric}
+                    <TrendingUp className="w-3 h-3 text-brand-primary" />
+                    <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{testimonials[current].metric}</span>
                   </motion.div>
 
                   {/* Divider */}
@@ -296,7 +273,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
             onClick={() => handleNavClick('contact-page')}
             className="bg-brand-cta hover:bg-brand-ctaHover text-white font-semibold text-sm px-8 py-3 rounded-full shadow-md transition-colors"
           >
-            Get Free Consultation →
+            Get Consultation →
           </motion.button>
         </div>
 

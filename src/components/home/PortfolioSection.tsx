@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { TrendingUp } from 'lucide-react';
 import { portfolioItems } from '../../constants/mockData';
-import { renderPortfolioMockup } from './portfolioMockups';
 
 interface PortfolioSectionProps {
   handleNavClick: (id: string) => void;
@@ -14,11 +13,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavCli
 
         {/* Section Header */}
         <div className="text-center mb-12 max-w-2xl mx-auto">
-          <span className="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-3">
+          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
             OUR WORK
           </span>
           <h2 className="font-display font-black text-brand-navy text-3xl sm:text-4xl leading-tight">
-            Proven Campaigns, <span className="text-brand-primary">Real Results</span>
+            Proven Campaigns, <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Real Results</span>
           </h2>
           <p className="text-sm text-[#64748B] mt-4">
             Real campaigns. Real results. Here's how we helped businesses grow with digital marketing.
@@ -46,15 +45,21 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavCli
                   className="w-full bg-white border border-brand-border rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col justify-between"
                 >
                   {/* Top Image Area */}
-                  <div className="h-48 w-full bg-[#F1F5F9] relative overflow-hidden flex items-center justify-center border-b border-brand-border">
-                    {renderPortfolioMockup(p.id)}
+                  <div className="h-48 w-full relative overflow-hidden border-b border-brand-border">
+                    <img
+                      src={`https://picsum.photos/seed/portfolio-${p.id}/500/400`}
+                      alt={p.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 to-transparent" />
                   </div>
 
                   {/* Card Content (below image) */}
                   <div className="p-5 text-left flex flex-col justify-between flex-grow">
                     <div>
                       {/* Category label */}
-                      <span className="text-xs font-bold uppercase text-brand-primary tracking-wide block mb-1">
+                      <span className="text-xs font-bold uppercase bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent tracking-wide block mb-1">
                         {p.category}
                       </span>
 
@@ -66,10 +71,10 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavCli
                       {/* Result metric badge */}
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] text-brand-primary rounded-full px-3 py-1 text-xs font-bold mb-3 cursor-default"
+                        className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] rounded-full px-3 py-1 text-xs font-bold mb-3 cursor-default"
                       >
-                        <TrendingUp className="w-3 h-3" />
-                        {p.metric}
+                        <TrendingUp className="w-3 h-3 text-brand-primary" />
+                        <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{p.metric}</span>
                       </motion.div>
 
                       {/* Short description */}
@@ -101,7 +106,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavCli
         <div className="text-center mt-8">
           <button
             onClick={() => handleNavClick('portfolio-page')}
-            className="inline-flex items-center justify-center border-2 border-brand-cta text-brand-cta hover:bg-brand-cta hover:text-white font-semibold text-sm px-8 py-3 rounded-full transition-all duration-300"
+            className="inline-flex items-center justify-center border-2 border-brand-cta text-brand-cta hover:bg-brand-cta hover:text-white font-semibold text-sm px-8 py-3 rounded-full transition-colors"
           >
             View All Projects →
           </button>

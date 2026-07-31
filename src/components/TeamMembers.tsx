@@ -34,21 +34,23 @@ export const TeamMembers: React.FC<TeamMembersProps> = ({ onNavClick }) => {
               transition={{ duration: 0.5, delay: idx * 0.12 }}
               className="bg-white border border-brand-border rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.10)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-300 text-center flex flex-col h-full group max-w-[260px] mx-auto w-full"
             >
-              {/* Top Section — full-width rectangular portrait, no circle */}
-              <div className="w-full aspect-[4/5] bg-brand-light overflow-hidden">
-                {m.image ? (
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-brand-primary flex items-center justify-center">
-                    <span className="font-black text-white text-3xl tracking-wider">
-                      {m.initials}
-                    </span>
-                  </div>
-                )}
+              {/* Top Section — circular portrait */}
+              <div className="w-full pt-7 pb-1 flex items-center justify-center bg-brand-light">
+                <div className="w-28 h-28 rounded-full overflow-hidden ring-4 ring-white shadow-md">
+                  {m.image ? (
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-brand-primary flex items-center justify-center">
+                      <span className="font-black text-white text-2xl tracking-wider">
+                        {m.initials}
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Card Body */}
@@ -88,7 +90,7 @@ export const TeamMembers: React.FC<TeamMembersProps> = ({ onNavClick }) => {
                 </div>
 
                 {/* Social icons row */}
-                <div className="mt-auto pt-3 flex justify-center gap-3">
+                <div className="mt-auto pt-1 flex justify-center gap-3">
                   <a
                     href="https://linkedin.com"
                     target="_blank"
@@ -101,7 +103,7 @@ export const TeamMembers: React.FC<TeamMembersProps> = ({ onNavClick }) => {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:bg-brand-cta hover:text-white flex items-center justify-center transition-all duration-300"
+                    className="w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:text-white hover:bg-gradient-to-tr hover:from-[#feda75] hover:via-[#d62976] hover:to-[#4f5bd5] flex items-center justify-center transition-all duration-300"
                   >
                     <FaInstagram className="w-5 h-5" />
                   </a>

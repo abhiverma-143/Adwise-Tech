@@ -14,6 +14,7 @@ import { Contact } from './pages/Contact';
 import { Blog } from './pages/Blog';
 import { Services } from './pages/Services';
 import { CareersPage } from './pages/CareersPage';
+import { Courses } from './pages/Courses';
 
 import type { JobOpening } from './types';
 
@@ -94,6 +95,12 @@ function AppContent() {
 
     if (id === 'blog') {
       navigate('/blog');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    if (id === 'courses') {
+      navigate('/courses');
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
@@ -219,6 +226,8 @@ function AppContent() {
         <Route path="/careers" element={
           <CareersPage onApplyJob={openCareerModal} />
         } />
+
+        <Route path="/courses" element={<Courses handleNavClick={handleNavClick} />} />
       </Routes>
 
       {/* --- FOOTER --- */}
@@ -244,7 +253,7 @@ function AppContent() {
 
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/919171038075?text=Hello%20Ad%20Wise%20Tech,%20I%20would%20like%20to%20know%20more%2520about%2520your%2520digital%2520marketing%252520services."
+        href="https://wa.me/919171038075?text= "
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:bg-[#20ba59] z-40 focus:outline-none whatsapp-pulse"

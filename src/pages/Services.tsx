@@ -255,11 +255,11 @@ export const Services: React.FC<ServicesProps> = () => {
       {/* SECTION 1 — HERO */}
       <section className="bg-white py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
-          <span className="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-3">
+          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
             OUR SERVICES
           </span>
           <h1 className="font-display font-black text-3xl lg:text-4xl text-brand-navy tracking-tight leading-tight">
-            Complete Digital <span className="text-brand-primary">Marketing Solutions</span>
+            Complete Digital <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Marketing Solutions</span>
           </h1>
           <p className="text-brand-secondary text-sm sm:text-base leading-relaxed max-w-2xl mt-3 mb-0">
             From SEO to Social Media, PPC to Website Development — we offer end-to-end digital marketing services to grow your business in Bhopal and beyond.
@@ -306,7 +306,7 @@ export const Services: React.FC<ServicesProps> = () => {
                     
                     {/* What We Offer */}
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-brand-primary mb-4 block">
+                      <span className="text-xs font-bold uppercase tracking-widest bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent mb-4 block">
                         What We Offer
                       </span>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -368,7 +368,7 @@ export const Services: React.FC<ServicesProps> = () => {
       <section className="bg-white py-16 border-t border-gray-100 relative z-10">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-3">
+            <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
               FAQ
             </span>
             <h2 className="font-display font-black text-brand-navy text-2xl sm:text-3xl leading-tight">

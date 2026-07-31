@@ -1,163 +1,118 @@
-// Decorative SVG mockups shown on the portfolio cards on the homepage.
-// Each case corresponds to a portfolioItems[].id in src/constants/mockData.tsx.
-export const renderPortfolioMockup = (id: number) => {
-  switch (id) {
-    case 1:
-      return (
-        <svg className="w-full h-full p-4" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Browser Frame */}
-          <rect x="10" y="10" width="280" height="140" rx="8" fill="white" stroke="#F0F0F0" strokeWidth="2" />
-          {/* Browser Top Bar */}
-          <rect x="10" y="10" width="280" height="24" rx="8" fill="#1A1A2E" />
-          <rect x="10" y="20" width="280" height="14" fill="#1A1A2E" />
-          {/* 3 browser dots */}
-          <circle cx="24" cy="22" r="3.5" fill="#C41E56" />
-          <circle cx="36" cy="22" r="3.5" fill="#64748B" />
-          <circle cx="48" cy="22" r="3.5" fill="#F0F0F0" />
-          {/* Accent header bar */}
-          <rect x="20" y="44" width="260" height="18" rx="4" fill="#C41E56" opacity="0.9" />
-          {/* Shopping cart top right */}
-          <path d="M255 53h-4.5l-2.5-7h12l-1.5 4.5c-.2.5-.7.8-1.2.8h-2.3" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="249" cy="57" r="1.5" fill="white" />
-          <circle cx="256" cy="57" r="1.5" fill="white" />
-          {/* Product Grid 2x2 */}
-          <rect x="25" y="72" width="115" height="32" rx="4" fill="#F8F9FC" stroke="#F0F0F0" />
-          <rect x="160" y="72" width="115" height="32" rx="4" fill="#F8F9FC" stroke="#F0F0F0" />
-          <rect x="25" y="110" width="115" height="32" rx="4" fill="#F8F9FC" stroke="#F0F0F0" />
-          <rect x="160" y="110" width="115" height="32" rx="4" fill="#F8F9FC" stroke="#F0F0F0" />
+import { motion, AnimatePresence } from 'framer-motion';
+import { TrendingUp } from 'lucide-react';
+import { portfolioItems } from '../../constants/mockData';
 
-          {/* Product internal lines / price tag */}
-          <rect x="35" y="80" width="55" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="35" y="90" width="30" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="105" y="80" width="25" height="16" rx="3" fill="#C41E56" opacity="0.15" />
-          <rect x="110" y="85" width="15" height="6" rx="1.5" fill="#C41E56" />
+interface PortfolioSectionProps {
+  handleNavClick: (id: string) => void;
+}
 
-          <rect x="170" y="80" width="55" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="170" y="90" width="30" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="240" y="80" width="25" height="16" rx="3" fill="#C41E56" opacity="0.15" />
-          <rect x="245" y="85" width="15" height="6" rx="1.5" fill="#C41E56" />
+export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavClick }) => {
+  return (
+    <section id="portfolio" className="bg-[#F8F9FC] pt-12 pb-10 lg:pt-12 lg:pb-28 border-b border-brand-border relative z-10 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <rect x="35" y="118" width="55" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="35" y="128" width="30" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="105" y="118" width="25" height="16" rx="3" fill="#C41E56" opacity="0.15" />
-          <rect x="110" y="123" width="15" height="6" rx="1.5" fill="#C41E56" />
+        {/* Section Header */}
+        <div className="text-center mb-12 max-w-2xl mx-auto">
+          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
+            OUR WORK
+          </span>
+          <h2 className="font-display font-black text-brand-navy text-3xl sm:text-4xl leading-tight">
+            Proven Campaigns, <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Real Results</span>
+          </h2>
+          <p className="text-sm text-[#64748B] mt-4">
+            Real campaigns. Real results. Here's how we helped businesses grow with digital marketing.
+          </p>
+        </div>
 
-          <rect x="170" y="118" width="55" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="170" y="128" width="30" height="6" rx="2" fill="#F0F0F0" />
-          <rect x="240" y="118" width="25" height="16" rx="3" fill="#C41E56" opacity="0.15" />
-          <rect x="245" y="123" width="15" height="6" rx="1.5" fill="#C41E56" />
-        </svg>
-      );
-    case 2:
-      return (
-        <svg className="w-full h-full p-4" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="280" height="140" rx="8" fill="white" stroke="#F0F0F0" strokeWidth="2" />
-          <rect x="20" y="20" width="260" height="20" rx="10" fill="#F8F9FC" stroke="#F0F0F0" strokeWidth="1" />
-          <text x="35" y="33" fill="#64748B" className="text-[9px] font-semibold">google.com/search?q=best+marketing+agency</text>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <AnimatePresence mode="popLayout">
+            {portfolioItems
+              .slice(0, 3)
+              .map((p, idx) => (
+                <motion.div
+                  key={p.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: -30 }}
+                  transition={{ duration: 0.4, ease: "easeOut", delay: idx * 0.1 }}
+                  whileHover={{
+                    y: -6,
+                    boxShadow: "0 16px 40px rgba(0, 0, 0, 0.12)",
+                    borderColor: "rgba(233, 30, 140, 0.30)"
+                  }}
+                  className="w-full bg-white border border-brand-border rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col justify-between"
+                >
+                  {/* Top Image Area */}
+                  <div className="h-48 w-full relative overflow-hidden border-b border-brand-border">
+                    <img
+                      src={`https://picsum.photos/seed/portfolio-${p.id}/500/400`}
+                      alt={p.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 to-transparent" />
+                  </div>
 
-          <g>
-            <rect x="20" y="48" width="54" height="12" rx="4" fill="#C41E56" />
-            <text x="47" y="57" fill="white" textAnchor="middle" className="text-[7px] font-black uppercase">Page 1 #1</text>
+                  {/* Card Content (below image) */}
+                  <div className="p-5 text-left flex flex-col justify-between flex-grow">
+                    <div>
+                      {/* Category label */}
+                      <span className="text-xs font-bold uppercase bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent tracking-wide block mb-1">
+                        {p.category}
+                      </span>
 
-            <text x="80" y="57" fill="#1A1A2E" className="text-[9px] font-bold">Ad Wise Tech — Bhopal's Leading Growth Agency</text>
-            <text x="20" y="69" fill="#C41E56" className="text-[8px]">https://adwisetech.com</text>
-            <text x="20" y="79" fill="#64748B" className="text-[7px] leading-[1.2]">We help local brands and e-commerce stores scale conversions by 95% using organic SEO systems...</text>
-          </g>
+                      {/* Title */}
+                      <h3 className="font-bold text-base text-brand-navy mb-2 leading-snug">
+                        {p.title}
+                      </h3>
 
-          <g opacity="0.6">
-            <text x="20" y="93" fill="#1A1A2E" className="text-[9px] font-bold">Top Marketing Agency in Bhopal</text>
-            <text x="20" y="103" fill="#64748B" className="text-[8px]">https://competitor-one.com/marketing</text>
-            <text x="20" y="113" fill="#64748B" className="text-[7px] leading-[1.2]">Read reviews, compare features, and check pricing profiles for local agencies...</text>
-          </g>
+                      {/* Result metric badge */}
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] rounded-full px-3 py-1 text-xs font-bold mb-3 cursor-default"
+                      >
+                        <TrendingUp className="w-3 h-3 text-brand-primary" />
+                        <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{p.metric}</span>
+                      </motion.div>
 
-          <g opacity="0.4">
-            <text x="20" y="127" fill="#1A1A2E" className="text-[9px] font-bold">Digital Services - Bhopal Agency</text>
-            <text x="20" y="137" fill="#64748B" className="text-[8px]">https://competitor-two.net/web-dev</text>
-          </g>
-        </svg>
-      );
-    case 3:
-      return (
-        <svg className="w-full h-full p-3" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="90" y="10" width="120" height="140" rx="16" fill="white" stroke="#1A1A2E" strokeWidth="3" />
-          <rect x="135" y="14" width="30" height="4" rx="2" fill="#F0F0F0" />
+                      {/* Short description */}
+                      <p className="text-xs text-[#64748B] leading-relaxed mb-4 line-clamp-2">
+                        {p.desc}
+                      </p>
+                    </div>
 
-          <circle cx="108" cy="32" r="8" fill="#C41E56" />
-          <rect x="120" y="26" width="50" height="6" rx="2" fill="#1A1A2E" />
-          <text x="120" y="38" fill="#C41E56" className="text-[5.5px] font-bold">Sponsored</text>
+                    {/* Bottom Row */}
+                    <div className="border-t border-brand-border pt-4 mt-auto flex justify-between items-center">
+                      <button
+                        onClick={() => handleNavClick('contact-page')}
+                        className="text-brand-primary font-semibold text-xs flex items-center gap-1 hover:underline transition-colors"
+                      >
+                        View Case Study →
+                      </button>
 
-          <rect x="98" y="46" width="104" height="60" rx="4" fill="#F8F9FC" stroke="#F0F0F0" />
-          <path d="M98 90l30-24 25 20 20-16 29 20v16H98V90z" fill="#C41E56" opacity="0.1" />
-          <circle cx="175" cy="62" r="5" fill="#C41E56" opacity="0.15" />
+                      <span className="bg-[#F8F9FC] rounded-full px-2 py-1 text-[10px] text-[#94A3B8] font-medium">
+                        {p.industry}
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+          </AnimatePresence>
+        </div>
 
-          <g>
-            <rect x="140" y="80" width="58" height="18" rx="6" fill="#C41E56" />
-            <text x="169" y="92" fill="white" textAnchor="middle" className="text-[8px] font-black">+36% CTR</text>
-          </g>
+        {/* View All Projects Button */}
+        <div className="text-center mt-8">
+          <button
+            onClick={() => handleNavClick('portfolio-page')}
+            className="inline-flex items-center justify-center border-2 border-brand-cta text-brand-cta hover:bg-brand-cta hover:text-white font-semibold text-sm px-8 py-3 rounded-full transition-colors"
+          >
+            View All Projects →
+          </button>
+        </div>
 
-          <circle cx="106" cy="114" r="3" stroke="#94A3B8" strokeWidth="1" />
-          <circle cx="118" cy="114" r="3" stroke="#94A3B8" strokeWidth="1" />
-          <circle cx="130" cy="114" r="3" stroke="#94A3B8" strokeWidth="1" />
-
-          <rect x="102" y="124" width="96" height="4" rx="1" fill="#F0F0F0" />
-          <rect x="102" y="132" width="70" height="4" rx="1" fill="#F0F0F0" />
-        </svg>
-      );
-    case 4:
-      return (
-        <svg className="w-full h-full p-4" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="280" height="140" rx="8" fill="white" stroke="#F0F0F0" strokeWidth="2" />
-          <rect x="10" y="10" width="280" height="24" rx="8" fill="#F8F9FC" />
-          <rect x="10" y="20" width="280" height="14" fill="#F8F9FC" />
-          <text x="24" y="26" fill="#1A1A2E" className="text-[9px] font-black uppercase tracking-wider">Google Ads Dashboard</text>
-
-          <rect x="24" y="44" width="70" height="24" rx="6" fill="#C41E56" fillOpacity="0.08" stroke="#C41E56" strokeWidth="1" opacity="0.8" />
-          <text x="32" y="54" fill="#64748B" className="text-[7px] font-bold">Clicks</text>
-          <text x="32" y="64" fill="#1A1A2E" className="text-[10px] font-bold">14.8K</text>
-
-          <rect x="102" y="44" width="80" height="24" rx="6" fill="#F8F9FC" stroke="#F0F0F0" strokeWidth="1" />
-          <text x="110" y="54" fill="#64748B" className="text-[7px] font-bold">Impressions</text>
-          <text x="110" y="64" fill="#1A1A2E" className="text-[10px] font-bold">345K</text>
-
-          <g>
-            <rect x="190" y="44" width="86" height="24" rx="6" fill="#C41E56" />
-            <text x="233" y="58" fill="white" textAnchor="middle" className="text-[9px] font-black">+48% Conversions</text>
-          </g>
-
-          <rect x="40" y="105" width="22" height="25" fill="#C41E56" opacity="0.4" rx="3" />
-          <rect x="75" y="95" width="22" height="35" fill="#C41E56" opacity="0.4" rx="3" />
-          <rect x="110" y="85" width="22" height="45" fill="#C41E56" opacity="0.4" rx="3" />
-          <rect x="145" y="98" width="22" height="32" fill="#C41E56" opacity="0.4" rx="3" />
-          <rect x="180" y="78" width="22" height="52" fill="#C41E56" opacity="0.4" rx="3" />
-          <rect x="215" y="70" width="22" height="60" fill="#C41E56" rx="3" />
-          <line x1="30" y1="130" x2="250" y2="130" stroke="#F0F0F0" strokeWidth="1.5" />
-        </svg>
-      );
-    case 5:
-      return (
-        <svg className="w-full h-full p-4" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="10" y="10" width="280" height="140" rx="8" fill="white" stroke="#F0F0F0" strokeWidth="2" />
-
-          <rect x="24" y="24" width="100" height="48" rx="6" fill="#F8F9FC" stroke="#F0F0F0" strokeWidth="1" />
-          <circle cx="50" cy="48" r="14" fill="#C41E56" opacity="0.1" />
-          <path d="M46 48l4-4 4 4-4 4z" fill="#C41E56" />
-          <rect x="74" y="44" width="40" height="8" rx="3" fill="#1A1A2E" />
-
-          <text x="140" y="38" fill="#1A1A2E" className="text-[12px] font-black font-display">Outfit Bold</text>
-          <text x="140" y="52" fill="#64748B" className="text-[8px] font-sans">Aa Bb Cc Dd Ee Ff 123</text>
-
-          <text x="24" y="96" fill="#64748B" className="text-[8px] font-bold uppercase tracking-wider">Color Palette</text>
-          <circle cx="34" cy="120" r="14" fill="#C41E56" stroke="#F0F0F0" strokeWidth="1" />
-          <circle cx="70" cy="120" r="14" fill="#1A1A2E" stroke="#F0F0F0" strokeWidth="1" />
-          <circle cx="106" cy="120" r="14" fill="#64748B" stroke="#F0F0F0" strokeWidth="1" />
-
-          <rect x="140" y="75" width="136" height="60" rx="6" fill="#F8F9FC" stroke="#F0F0F0" />
-          <rect x="150" y="88" width="60" height="8" rx="3" fill="#C41E56" />
-          <rect x="150" y="102" width="116" height="5" rx="2" fill="#F0F0F0" />
-          <rect x="150" y="112" width="80" height="5" rx="2" fill="#F0F0F0" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+      </div>
+    </section>
+  );
 };

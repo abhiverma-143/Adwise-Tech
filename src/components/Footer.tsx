@@ -36,7 +36,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
               <a href="https://www.linkedin.com/company/ad-wise-tech/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-muted hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300">
                 <FaLinkedin className="w-3.5 h-3.5" />
               </a>
-              <a href="https://www.youtube.com/@ad_wise_tech" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-muted hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300">
+              <a href="https://youtu.be/D8vuM9C20Kk?si=wefQTFRP2m768LEQ" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-muted hover:bg-brand-orange hover:text-white hover:border-brand-orange transition-all duration-300">
                 <FaYoutube className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -55,16 +55,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
               {/* Item 2 */}
               <div className="flex items-center gap-2 text-left">
                 <Phone className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
-                <a href="tel:+919171038075" className="text-xs text-brand-muted hover:text-brand-orange transition-colors">
-                  +91 91710 38075
+                <a href="tel:+919171038075,+91-8319793311" className="text-xs text-brand-muted hover:text-brand-orange transition-colors">
+                  +91 91710 38075, +91-8319793311 
                 </a>
               </div>
 
               {/* Item 3 */}
               <div className="flex items-center gap-2 text-left">
                 <Mail className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
-                <a href="mailto:info@adwisetech.com" className="text-xs text-brand-muted hover:text-brand-orange transition-colors">
-                  info@adwisetech.com
+                <a href="mailto:contact@adwisetech.com" className="text-xs text-brand-muted hover:text-brand-orange transition-colors">
+                  contact@adwisetech.com
                 </a>
               </div>
 

@@ -10,8 +10,7 @@ import type {
   TeamMember, 
   Stat, 
   Testimonial, 
-  PortfolioItem, 
-  ProcessStep, 
+  PortfolioItem,  
   JobOpening,
   BlogPost
 } from '../types';
@@ -270,45 +269,6 @@ export const portfolioItems: PortfolioItem[] = [
     metric: "Complete Brand Overhaul",
     desc: "Created full brand identity including logo, color palette, typography and brand guidelines.",
     industry: "Startup"
-  }
-];
-
-export const processSteps: ProcessStep[] = [
-  {
-    number: '01',
-    title: 'Discovery',
-    desc: 'We understand your business and goals.',
-    icon: <Search className="w-8 h-8" />
-  },
-  {
-    number: '02',
-    title: 'Research',
-    desc: 'In-depth research of your industry and competitors.',
-    icon: <BarChart2 className="w-8 h-8" />
-  },
-  {
-    number: '03',
-    title: 'Strategy',
-    desc: 'Custom strategy tailored for your business.',
-    icon: <Target className="w-8 h-8" />
-  },
-  {
-    number: '04',
-    title: 'Execution',
-    desc: 'We execute the strategy with precision.',
-    icon: <Rocket className="w-8 h-8" />
-  },
-  {
-    number: '05',
-    title: 'Optimization',
-    desc: 'Continuous optimization for better results.',
-    icon: <TrendingUp className="w-8 h-8" />
-  },
-  {
-    number: '06',
-    title: 'Growth',
-    desc: 'We help you scale and grow consistently.',
-    icon: <Award className="w-8 h-8" />
   }
 ];
 

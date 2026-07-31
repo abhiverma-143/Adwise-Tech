@@ -129,6 +129,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </div>
 
+            <button onClick={() => handleNavClick('courses')}
+             className={`text-sm font-semibold tracking-wide hover:text-brand-orange transition-colors ${location.pathname === '/courses' ? 'text-brand-orange' : 'text-brand-navy'}`}>
+              Courses
+            </button>
+
             <div className="relative h-full flex items-center">
               <button
                 onClick={() => handleNavClick('blog')}
@@ -174,7 +179,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNavClick('contact-page')}
               className="bg-brand-cta hover:bg-brand-ctaHover text-white font-semibold text-sm px-6 py-2.5 rounded-full shadow-md flex items-center gap-1.5 transition-colors"
             >
-              Get Free Consultation <span className="font-light">↗</span>
+              Get Consultation <span className="font-light">↗</span>
             </motion.button>
           </div>
 
@@ -275,6 +280,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 Portfolio
               </button>
+
+              <button onClick={() => handleNavClick('courses')}
+             className={`text-sm font-semibold tracking-wide hover:text-brand-orange transition-colors ${location.pathname === '/courses' ? 'text-brand-orange' : 'text-brand-navy'}`}>
+              Courses
+            </button>
+
               <button
                 onClick={() => handleNavClick('blog')}
                 className={`w-full text-left py-2 font-semibold transition-colors block text-sm ${location.pathname === '/blog' ? 'text-brand-orange' : 'text-brand-navy hover:text-brand-orange'}`}
@@ -299,7 +310,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => handleNavClick('contact-page')}
                   className="w-full text-center bg-brand-orange hover:bg-brand-ctaHover text-white py-3 rounded-full font-bold text-sm shadow-md transition-colors"
                 >
-                  Get Free Consultation ↗
+                  Get Consultation ↗
                 </button>
               </div>
             </div>

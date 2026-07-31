@@ -26,12 +26,12 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
   };
 
   return (
-    <section id="blog" className="bg-[#F8F9FC] py-16 lg:py-20 relative z-10 border-b border-brand-border transition-colors duration-300">
+    <section id="blog" className="bg-white py-16 lg:py-20 relative z-10 border-b border-brand-border transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-8 px-4">
-          <span className="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-3">
+          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
             Knowledge Hub
           </span>
           <h2 className="font-display font-black text-brand-navy text-2xl sm:text-3xl lg:text-4xl leading-tight">
@@ -114,8 +114,8 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                     {/* Content area */}
                     <div className="col-span-1 lg:col-span-6 p-5 lg:p-8 text-left flex flex-col justify-between">
                       <div>
-                        <div className="flex items-center gap-2 text-[11px] font-bold text-brand-primary uppercase tracking-wider mb-3">
-                          <span>{featuredPost.category}</span>
+                        <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider mb-3">
+                          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{featuredPost.category}</span>
                           <span className="text-gray-400">•</span>
                           <span className="text-gray-400">{featuredPost.date}</span>
                         </div>
@@ -172,7 +172,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                         {/* CONTENT area */}
                         <div className="p-4 lg:p-5">
                           <div className="flex flex-wrap gap-1.5 items-center text-[11px] mb-2.5">
-                            <span className="font-bold text-brand-primary uppercase">{post.category}</span>
+                            <span className="font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase">{post.category}</span>
                             <span className="text-gray-400">•</span>
                             <span className="text-gray-400">{post.date}</span>
                           </div>

@@ -10,17 +10,17 @@ export const Contact: React.FC = () => {
       <section className="relative bg-brand-navy py-12 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
           {/* Badge */}
-          <span className="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-3">
+          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
             CONTACT US
           </span>
 
           {/* Heading */}
           <h1 className="font-display font-black text-3xl lg:text-4xl text-white tracking-tight leading-tight">
-            Let's <span className="text-brand-primary">Talk Business</span>
+            Let's <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Talk Business</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed max-w-xl mt-3 mb-0">
+          <p className="text-[#FFFFFF] text-sm sm:text-base leading-relaxed max-w-xl mt-3 mb-0">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond within 24 hours.
           </p>
         </div>
@@ -62,10 +62,10 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] text-[#94A3B8] font-bold uppercase tracking-wider block mb-0.5">CALL US</span>
-                    <a href="tel:+919171038075" className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-primary transition-colors block">
-                      +91 91710 38075
+                    <a href="tel:+919171038075, +91-8319793311 " className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-primary transition-colors block">
+                      +91 91710 38075, +91-8319793311 
                     </a>
-                    <span className="text-[10px] text-brand-secondary font-medium mt-0.5 block">Mon-Sat, 10AM-7PM</span>
+                    {/* <span className="text-[10px] text-brand-secondary font-medium mt-0.5 block">Mon-Sat, 10AM-7PM</span> */}
                   </div>
                 </div>
 
@@ -76,8 +76,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] text-[#94A3B8] font-bold uppercase tracking-wider block mb-0.5">EMAIL US</span>
-                    <a href="mailto:info@adwisetech.com" className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-accent transition-colors block">
-                      info@adwisetech.com
+                    <a href="mailto:contact@adwisetech.com" className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-accent transition-colors block">
+                      contact@adwisetech.com
                     </a>
                     <span className="text-[10px] text-brand-secondary font-medium mt-0.5 block">We reply within 24 hours</span>
                   </div>
@@ -116,7 +116,7 @@ export const Contact: React.FC = () => {
                 <a href="https://www.linkedin.com/company/ad-wise-tech/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-secondary hover:bg-brand-cta hover:text-white hover:border-brand-cta transition-all duration-300">
                   <FaLinkedin className="w-4 h-4" />
                 </a>
-                <a href="https://www.youtube.com/@ad_wise_tech" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-secondary hover:bg-brand-cta hover:text-white hover:border-brand-cta transition-all duration-300">
+                <a href="https://youtu.be/D8vuM9C20Kk?si=wefQTFRP2m768LEQ" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-brand-secondary hover:bg-brand-cta hover:text-white hover:border-brand-cta transition-all duration-300">
                   <FaYoutube className="w-4 h-4" />
                 </a>
               </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Loader2 } from 'lucide-react';
 
-const WEB3FORMS_ACCESS_KEY = "5e01a64d-3c8f-410a-9eb4-7d8c7fa36660";
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 export const ContactFormCard: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ export const ContactFormCard: React.FC = () => {
           Accept: 'application/json'
         },
         body: JSON.stringify({
-          access_key: "5e01a64d-3c8f-410a-9eb4-7d8c7fa36660",
+          access_key: WEB3FORMS_ACCESS_KEY,
           subject: `New Inquiry from ${formData.fullName} - AD Wise Tech`,
           from_name: formData.fullName,
           name: formData.fullName,

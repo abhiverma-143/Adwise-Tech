@@ -19,7 +19,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ handleNavClick
         </p>
 
         {/* Services cards grid, showing first 4 */}
-        <ServicesCards onNavClick={handleNavClick} limit={4} isHomePage={true} />
+        <ServicesCards onNavClick={handleNavClick} limit={3} isHomePage={true} />
 
         {/* View All Services Button */}
         <div className="text-center mt-12">

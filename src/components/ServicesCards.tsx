@@ -604,7 +604,7 @@ export const ServicesCards: React.FC<ServicesCardsProps> = ({ onNavClick = () =>
                         onClick={() => onNavClick('contact-page')}
                         className="w-full bg-brand-cta hover:bg-brand-ctaHover text-white font-bold py-3.5 rounded-xl text-sm transition-colors shadow-md flex items-center justify-center gap-1.5"
                       >
-                        Book Free Consultation
+                        Get Consultation
                         <ArrowRight className="w-4 h-4" />
                       </button>
                     </div>

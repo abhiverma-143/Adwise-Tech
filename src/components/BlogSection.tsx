@@ -98,9 +98,9 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                 >
                   <div className="bg-white border border-brand-border rounded-[24px] overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 grid grid-cols-1 lg:grid-cols-12">
                     {/* Image area */}
-                    <div className="col-span-1 lg:col-span-6 h-56 lg:h-auto relative overflow-hidden">
+                    <div className="col-span-1 lg:col-span-6 h-56 lg:h-full relative overflow-hidden">
                       <img
-                        src={`https://picsum.photos/seed/blog-${featuredPost.id}/800/600`}
+                        src={featuredPost.img}
                         alt={featuredPost.title}
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -160,9 +160,9 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                     >
                       <div>
                         {/* TOP image area */}
-                        <div className="h-[170px] relative overflow-hidden">
+                        <div className="h-[220px] relative overflow-hidden">
                           <img
-                            src={`https://picsum.photos/seed/blog-${post.id}/500/400`}
+                            src={post.img}
                             alt={post.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             loading="lazy"

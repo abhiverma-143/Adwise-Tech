@@ -21,8 +21,8 @@ interface HeroSectionProps {
 const heroSlides = [
   { img: '/hero_slide_1.png', label: 'SEO & Analytics Dashboard', tag: 'Search Engine Optimization' },
   { img: '/hero_slide_2.png', label: 'Social Media Growth Strategy', tag: 'Social Media Marketing' },
-  { img: '/hero_slide_4.png', label: 'Certified Digital Marketing Courses', tag: 'Learn & Grow' },
-  { img: '/hero_slide_5.png', label: 'Fast, Conversion-Ready Websites', tag: 'Website Development' },
+  { img: '/smm.jpg', label: 'Certified Digital Marketing Courses', tag: 'Learn & Grow' },
+  { img: '/svc_web.png', label: 'Fast, Conversion-Ready Websites', tag: 'Website Development' },
 ];
 
 const gradientText = "bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent";
@@ -42,12 +42,12 @@ const heroSubtext = [
 ];
 
 const chips = [
-  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "social-media" },
+  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "smm" },
   { icon: <Search className="w-3 h-3 text-brand-primary" />, label: "SEO", id: "seo" },
-  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc-ads" },
-  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "website-dev" },
+  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc" },
+  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "web-dev" },
   { icon: <Palette className="w-3 h-3 text-brand-primary" />, label: "Graphic Design", id: "graphic-design" },
-  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance" },
+  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance-marketing" },
   { icon: <Megaphone className="w-3 h-3 text-brand-primary" />, label: "Offline Marketing", id: "offline-marketing" },
   { icon: <GraduationCap className="w-3 h-3 text-brand-primary" />, label: "Courses", id: "courses" },
 ];
@@ -122,7 +122,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
                 <h1 className="font-display font-black text-4xl lg:text-5xl text-brand-navy tracking-tight leading-[1.15] mb-4">
                   {heroHeadings[heroSlideIdx]}
                 </h1>
-                <p className="text-base text-brand-secondary leading-relaxed max-w-lg mb-6">
+                <p className="text-base text-brand-secondary leading-relaxed max-w-lg mb-6 line-clamp-2">
                   {heroSubtext[heroSlideIdx]}
                 </p>
               </motion.div>

@@ -47,7 +47,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavCli
                   {/* Top Image Area */}
                   <div className="h-48 w-full relative overflow-hidden border-b border-brand-border">
                     <img
-                      src={`https://picsum.photos/seed/portfolio-${p.id}/500/400`}
+                      src={p.img}
                       alt={p.title}
                       className="w-full h-full object-cover"
                       loading="lazy"

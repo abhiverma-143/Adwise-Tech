@@ -19,6 +19,7 @@ export interface PortfolioItem {
   metric: string;
   desc: string;
   industry: string;
+  img: string;
 }
 
 export interface ProcessStep {
@@ -83,4 +84,5 @@ export interface BlogPost {
   category: string;
   gradient: string;
   icon: React.ReactNode;
+  img: string;
 }

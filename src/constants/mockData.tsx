@@ -232,7 +232,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "E-Commerce Website Development",
     metric: "+95% Lead Conversion",
     desc: "Built a high-converting e-commerce website with optimized product pages and checkout flow.",
-    industry: "E-Commerce"
+    industry: "E-Commerce",
+    img: "/web.jpg"
   },
   {
     id: 2,
@@ -241,7 +242,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "SEO Campaign — Organic Growth",
     metric: "+120% Organic Traffic",
     desc: "Ranked client on Page 1 of Google for 15+ high-intent keywords within 4 months.",
-    industry: "Local Business"
+    industry: "Local Business",
+    img: "/SEO Compaign.jpg"
   },
   {
     id: 3,
@@ -250,7 +252,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Meta Ads — Lead Generation",
     metric: "3.2x ROAS Achieved",
     desc: "Generated 1,200+ qualified leads via Facebook and Instagram ad campaigns in 60 days.",
-    industry: "Real Estate"
+    industry: "Real Estate",
+    img: "/Meta.jpg"
   },
   {
     id: 4,
@@ -259,7 +262,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Google Ads — PPC Campaign",
     metric: "+48% Conversions",
     desc: "Reduced cost-per-click by 35% while increasing conversions through smart bidding strategies.",
-    industry: "Healthcare"
+    industry: "Healthcare",
+    img: "/svc_ppc.png"
   },
   {
     id: 5,
@@ -268,7 +272,8 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Brand Identity Design",
     metric: "Complete Brand Overhaul",
     desc: "Created full brand identity including logo, color palette, typography and brand guidelines.",
-    industry: "Startup"
+    industry: "Startup",
+    img: "/svc_graphic.png"
   }
 ];
 
@@ -281,7 +286,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     category: 'PPC Advertising',
     gradient: 'bg-brand-orange',
-    icon: <Megaphone className="w-8 h-8 text-white" />
+    icon: <Megaphone className="w-8 h-8 text-white" />,
+    img: '/hero_slide_3.png'
   },
   {
     id: 2,
@@ -291,7 +297,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '7 min read',
     category: 'SEO',
     gradient: 'bg-brand-navy',
-    icon: <Search className="w-8 h-8 text-white" />
+    icon: <Search className="w-8 h-8 text-white" />,
+    img: '/seo.jpg'
   },
   {
     id: 3,
@@ -301,7 +308,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '4 min read',
     category: 'Social Media',
     gradient: 'bg-brand-orange',
-    icon: <Users className="w-8 h-8 text-white" />
+    icon: <Users className="w-8 h-8 text-white" />,
+    img: '/smm.jpg'
   },
   {
     id: 4,
@@ -311,7 +319,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '6 min read',
     category: 'Website Development',
     gradient: 'bg-brand-navy',
-    icon: <Monitor className="w-8 h-8 text-white" />
+    icon: <Monitor className="w-8 h-8 text-white" />,
+    img: '/web.jpg'
   },
   {
     id: 5,
@@ -321,7 +330,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min read',
     category: 'Performance Marketing',
     gradient: 'bg-brand-orange',
-    icon: <BarChart2 className="w-8 h-8 text-white" />
+    icon: <BarChart2 className="w-8 h-8 text-white" />,
+    img: '/Meta.jpg'
   },
   {
     id: 6,
@@ -331,7 +341,8 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min read',
     category: 'Graphic Designing',
     gradient: 'bg-brand-navy',
-    icon: <PenTool className="w-8 h-8 text-white" />
+    icon: <PenTool className="w-8 h-8 text-white" />,
+    img: '/hero_slide_2.png'
   }
 ];
 

@@ -1,0 +1,29 @@
+# Ad Wise Tech — robots.txt
+
+# Default: allow all crawlers
+User-agent: *
+Allow: /
+
+# ===================== AI / Answer Engine crawlers =====================
+# Explicitly allowed so Ad Wise Tech can be cited by AI answer engines
+# (ChatGPT, Perplexity, Google AI Overviews, Claude) — part of AEO.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.adwisetech.com/sitemap.xml

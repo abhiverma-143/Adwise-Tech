@@ -15,6 +15,7 @@ interface Course {
   level: 'Beginner' | 'Intermediate' | 'Advanced';
   mode: 'Live Online' | 'In-Person, Bhopal';
   highlights: string[];
+  img: string;
 }
 
 const courses: Course[] = [
@@ -27,6 +28,7 @@ const courses: Course[] = [
     level: 'Beginner',
     mode: 'Live Online',
     highlights: ['Keyword research & strategy', 'Technical SEO audits', 'Local SEO for Bhopal businesses', 'Certificate on completion'],
+    img: '/seo.jpg',
   },
   {
     id: 2,
@@ -37,6 +39,7 @@ const courses: Course[] = [
     level: 'Intermediate',
     mode: 'Live Online',
     highlights: ['Campaign setup & bid strategy', 'Retargeting & A/B testing', 'Real client ad account practice', 'Certificate on completion'],
+    img: '/Meta.jpg',
   },
   {
     id: 3,
@@ -47,6 +50,7 @@ const courses: Course[] = [
     level: 'Beginner',
     mode: 'In-Person, Bhopal',
     highlights: ['Content calendar planning', 'Reels & short-form strategy', 'Community management', 'Certificate on completion'],
+    img: '/smm.jpg',
   },
   {
     id: 4,
@@ -57,6 +61,7 @@ const courses: Course[] = [
     level: 'Intermediate',
     mode: 'Live Online',
     highlights: ['Landing page design principles', 'WordPress & React basics', 'Speed & mobile optimization', 'Certificate on completion'],
+    img: '/web.jpg',
   },
   {
     id: 5,
@@ -67,6 +72,7 @@ const courses: Course[] = [
     level: 'Beginner',
     mode: 'In-Person, Bhopal',
     highlights: ['Logo & brand identity design', 'Social media creative kits', 'Ad banner design principles', 'Certificate on completion'],
+    img: '/svc_graphic.png',
   },
   {
     id: 6,
@@ -77,6 +83,7 @@ const courses: Course[] = [
     level: 'Advanced',
     mode: 'Live Online',
     highlights: ['Full-funnel campaign design', 'Marketing automation basics', 'ROI & analytics tracking', 'Certificate on completion'],
+    img: '/svc_performance.png',
   },
 ];
 
@@ -165,9 +172,9 @@ export const Courses: React.FC<CoursesProps> = ({ handleNavClick }) => {
                   className="bg-white border border-brand-border rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col text-left"
                 >
                   {/* Image */}
-                  <div className="h-[160px] relative overflow-hidden">
+                  <div className="h-[220px] relative overflow-hidden">
                     <img
-                      src={`https://picsum.photos/seed/course-${course.id}/500/400`}
+                      src={course.img}
                       alt={course.title}
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -211,9 +218,9 @@ export const Courses: React.FC<CoursesProps> = ({ handleNavClick }) => {
                       ))}
                     </ul>
 
-                    {/* Price + CTA */}
+                    {/* CTA */}
                     <div className="mt-auto border-t border-brand-border pt-4 flex items-center justify-between">
-                      
+
                       <button
                         onClick={() => handleNavClick('contact-page')}
                         className="bg-brand-cta hover:bg-brand-ctaHover text-white text-xs font-bold px-4 py-2 rounded-full transition-colors shadow-sm"

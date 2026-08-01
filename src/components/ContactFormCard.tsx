@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Loader2 } from 'lucide-react';
 
-const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'; // <-- yaha apni key daalo
+const WEB3FORMS_ACCESS_KEY = "5e01a64d-3c8f-410a-9eb4-7d8c7fa36660";
 
 export const ContactFormCard: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +32,7 @@ export const ContactFormCard: React.FC = () => {
         },
         body: JSON.stringify({
           access_key: "5e01a64d-3c8f-410a-9eb4-7d8c7fa36660",
-          subject: `New Inquiry from ${formData.fullName} - Ad Wise Tech`,
+          subject: `New Inquiry from ${formData.fullName} - AD Wise Tech`,
           from_name: formData.fullName,
           name: formData.fullName,
           email: formData.email,

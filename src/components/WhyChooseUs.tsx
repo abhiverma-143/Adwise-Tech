@@ -73,7 +73,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onNavClick }) => {
             <div className="w-12 h-1 bg-brand-orange rounded mb-5" />
 
             <p className="text-brand-secondary text-base leading-relaxed mb-7">
-              Partnering with Ad Wise Tech means choosing a results-driven digital marketing agency that delivers measurable growth. From SEO, Social Media Marketing, and PPC to Website & Graphic Design and Performance & Offline Marketing, we craft strategies that boost your online visibility, attract the right audience, and drive real business results.
+              Partnering with AD Wise Tech means choosing a results-driven digital marketing agency that delivers measurable growth. From SEO, Social Media Marketing, and PPC to Website & Graphic Design and Performance & Offline Marketing, we craft strategies that boost your online visibility, attract the right audience, and drive real business results.
             </p>
 
             {/* Achievement Stats — numbers count up when scrolled into view */}

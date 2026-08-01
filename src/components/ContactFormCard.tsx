@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Loader2 } from 'lucide-react';
 
+const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'; // <-- yaha apni key daalo
+
 export const ContactFormCard: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -14,24 +16,56 @@ export const ContactFormCard: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSuccess(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        companyName: '',
-        service: '',
-        budget: '',
-        message: ''
+    setError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "5e01a64d-3c8f-410a-9eb4-7d8c7fa36660",
+          subject: `New Inquiry from ${formData.fullName} - Ad Wise Tech`,
+          from_name: formData.fullName,
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company_name: formData.companyName,
+          service_interested: formData.service,
+          monthly_budget: formData.budget,
+          message: formData.message
+        })
       });
-      setTimeout(() => setSuccess(false), 5000);
-    }, 1500);
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSuccess(true);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          companyName: '',
+          service: '',
+          budget: '',
+          message: ''
+        });
+        setTimeout(() => setSuccess(false), 5000);
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -207,6 +241,13 @@ export const ContactFormCard: React.FC = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Error Alert */}
+        {error && (
+          <div className="bg-red-500/10 border border-red-500/20 text-red-600 p-3 rounded-lg text-xs font-semibold mt-2">
+            {error}
+          </div>
+        )}
       </form>
     </div>
   );

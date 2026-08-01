@@ -18,7 +18,7 @@ export const CareersPage: React.FC<CareersPageProps> = ({ onApplyJob }) => {
           <h1 className="font-display font-black text-3xl lg:text-4xl text-white tracking-tight leading-tight">
             Join Our Team of <span className="text-brand-primary">Marketing Experts</span>
           </h1>
-          <p className="text-[#94A3B8] text-sm sm:text-base leading-relaxed max-w-xl mt-3 mb-0">
+          <p className="text-[#FFFFFF] text-sm sm:text-base leading-relaxed max-w-xl mt-3 mb-0">
             We are always looking for passionate digital marketers, SEO specialists, developers, and creatives to join our growing Bhopal agency.
           </p>
         </div>

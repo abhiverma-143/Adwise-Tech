@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
         {/* Copyright Bar */}
         <div className="border-t border-white/5 pt-4 mt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
           <span className="text-[10px] text-brand-secondary">
-            © {new Date().getFullYear()} Ad Wise Tech. All Rights Reserved. Bhopal, MP.
+            © {new Date().getFullYear()} AD Wise Tech. All Rights Reserved. Bhopal, MP.
           </span>
           <div className="flex gap-4 text-[10px] text-brand-secondary">
             <a href="#privacy" className="hover:text-brand-orange transition-colors">Privacy Policy</a>

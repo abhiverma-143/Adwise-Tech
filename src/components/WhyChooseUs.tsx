@@ -80,11 +80,11 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onNavClick }) => {
             <div ref={statsRef} className="grid grid-cols-3 gap-4 mb-8 border-y border-brand-border py-5">
               {stats.map((s, i) => (
                 <div key={s.label} className={`flex flex-col ${i > 0 ? 'border-l border-brand-border pl-4' : ''}`}>
-                  <span className="font-display font-black text-brand-navy text-2xl leading-none mb-1">
+                  <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-2xl sm:text-3xl leading-snug mb-1">
                     <CountUp target={s.value} active={statsInView} duration={1200 + i * 200} />
                     {s.suffix}
                   </span>
-                  <span className="text-[11px] text-brand-secondary font-medium leading-snug">{s.label}</span>
+                  <span className="text-[15px] text-brand-secondary font-medium leading-snug">{s.label}</span>
                 </div>
               ))}
             </div>

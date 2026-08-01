@@ -64,11 +64,11 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onNavClick }) => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 text-left flex flex-col justify-center"
           >
-            <span className="text-brand-orange uppercase tracking-widest text-xs font-bold block mb-3">
+            <span className="text-brand-orange uppercase tracking-widest text-xs font-bold block mb-4">
               Why Choose Us
             </span>
             <h2 className="font-display font-black text-brand-navy text-3xl sm:text-4xl leading-tight mb-5">
-              Your Growth Partner,<br />Not Just Another Agency
+              <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Your Growth Partner,</span><br />Not Just Another Agency
             </h2>
             <div className="w-12 h-1 bg-brand-orange rounded mb-5" />
 

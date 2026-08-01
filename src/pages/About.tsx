@@ -56,7 +56,7 @@ export const About: React.FC<AboutProps> = ({ handleNavClick }) => {
                 Bhopal's Trusted Digital Partner
               </h2>
               <p className="text-brand-secondary text-sm sm:text-base leading-relaxed">
-                Welcome to Ad Wise Tech, your trusted partner for digital growth in Bhopal. We specialize in SEO, Social Media Marketing, PPC Advertising, and Website Design & Development. Our expert team crafts powerful strategies to enhance your online presence, drive quality traffic, and boost your business growth.
+                Welcome to AD Wise Tech, your trusted partner for digital growth in Bhopal. We specialize in SEO, Social Media Marketing, PPC Advertising, and Website Design & Development. Our expert team crafts powerful strategies to enhance your online presence, drive quality traffic, and boost your business growth.
               </p>
             </div>
             {/* Mission column */}

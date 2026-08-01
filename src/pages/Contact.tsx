@@ -7,7 +7,7 @@ export const Contact: React.FC = () => {
   return (
     <div className="transition-all duration-300">
       {/* HERO SECTION */}
-      <section className="relative bg-brand-navy py-12 overflow-hidden">
+      <section className="bg-white py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
           {/* Badge */}
           <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
@@ -15,12 +15,12 @@ export const Contact: React.FC = () => {
           </span>
 
           {/* Heading */}
-          <h1 className="font-display font-black text-3xl lg:text-4xl text-white tracking-tight leading-tight">
+          <h1 className="font-display font-black text-3xl lg:text-4xl text-brand-navy tracking-tight leading-tight">
             Let's <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Talk Business</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-[#FFFFFF] text-sm sm:text-base leading-relaxed max-w-xl mt-3 mb-0">
+          <p className="text-brand-secondary text-sm sm:text-base leading-relaxed max-w-2xl mt-3 mb-0">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond within 24 hours.
           </p>
         </div>

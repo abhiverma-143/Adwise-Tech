@@ -12,7 +12,7 @@ export const Blog: React.FC<BlogProps> = ({ handleNavClick }) => {
       <section className="bg-white py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
           <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
-            BLOG & INSIGHTS
+            BLOG & INSIGHTS 
           </span>
           <h1 className="font-display font-black text-3xl lg:text-4xl text-brand-navy tracking-tight leading-tight">
             Latest Insights & <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Marketing Trends</span>

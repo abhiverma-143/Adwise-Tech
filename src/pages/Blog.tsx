@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BlogSection } from '../components/BlogSection';
 
 interface BlogProps {
@@ -6,6 +7,8 @@ interface BlogProps {
 }
 
 export const Blog: React.FC<BlogProps> = ({ handleNavClick }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="transition-all duration-300">
       {/* Blog Hero */}
@@ -24,7 +27,13 @@ export const Blog: React.FC<BlogProps> = ({ handleNavClick }) => {
       </section>
       
       {/* Blog Section */}
-      <BlogSection onNavClick={handleNavClick} />
+      <BlogSection 
+        onNavClick={handleNavClick} 
+        onReadPost={(postId) => {
+          navigate(`/blog/${postId}`);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} 
+      />
     </div>
   );
 };

@@ -75,14 +75,19 @@ export interface Stat {
   label: string;
 }
 
+export interface BlogContentSection {
+  heading: string;
+  body: string;
+}
+
 export interface BlogPost {
   id: number;
   title: string;
   desc: string;
-  date: string;
   readTime: string;
   category: string;
   gradient: string;
   icon: React.ReactNode;
   img: string;
+  content: BlogContentSection[];
 }

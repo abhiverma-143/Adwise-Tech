@@ -12,6 +12,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Blog } from './pages/Blog';
+import { BlogPostPage } from './pages/BlogPostPage';
 import { Services } from './pages/Services';
 import { CareersPage } from './pages/CareersPage';
 import { Courses } from './pages/Courses';
@@ -27,16 +28,13 @@ export default function App() {
 }
 
 function AppContent() {
-  // Navigation states
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  // Modal states
   const [careerModalOpen, setCareerModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<JobOpening | null>(null);
 
-  // Scroll triggers
   const [showBackToTop, setShowBackToTop] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
@@ -48,10 +46,8 @@ function AppContent() {
     document.documentElement.classList.remove('dark');
 
     const handleScroll = () => {
-      // Back to top visibility
       setShowBackToTop(window.scrollY > 400);
 
-      // Simple active link highlight by scrolling position (only on homepage)
       if (location.pathname === '/') {
         const sections = ['home', 'why-choose-us', 'services', 'portfolio', 'process'];
         for (const section of sections) {
@@ -71,7 +67,6 @@ function AppContent() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  // Nav Click Handler supporting multi-page scroll routing
   const handleNavClick = (id: string) => {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
@@ -104,6 +99,7 @@ function AppContent() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    
 
     if (id === 'services' || id === 'services-page') {
       navigate('/services');
@@ -178,14 +174,12 @@ function AppContent() {
 
   return (
     <div className="relative font-sans text-brand-secondary bg-white min-h-screen antialiased transition-colors duration-300">
-      {/* Scroll Progress Bar */}
       <motion.div
         id="scroll-progress"
         className="fixed top-0 left-0 right-0 h-1 bg-brand-primary z-[100]"
         style={{ scaleX }}
       />
 
-      {/* --- NAVBAR --- */}
       <Navbar
         activeSection={activeSection}
         mobileMenuOpen={mobileMenuOpen}
@@ -195,34 +189,32 @@ function AppContent() {
         handleNavClick={handleNavClick}
       />
 
-      {/* --- PAGE ROUTING --- */}
       <Routes>
-        {/* HOMEPAGE ROUTE */}
         <Route path="/" element={
           <Home 
             handleNavClick={handleNavClick} 
           />
         } />
 
-        {/* ABOUT US STANDALONE ROUTE */}
         <Route path="/about" element={
           <About handleNavClick={handleNavClick} />
         } />
 
-        {/* CONTACT US PAGE ROUTE */}
         <Route path="/contact" element={<Contact />} />
 
-        {/* BLOG STANDALONE ROUTE */}
         <Route path="/blog" element={
           <Blog handleNavClick={handleNavClick} />
         } />
 
-        {/* SERVICES STANDALONE ROUTE */}
+        {/* Individual blog post route */}
+        <Route path="/blog/:postId" element={
+          <BlogPostPage handleNavClick={handleNavClick} />
+        } />
+
         <Route path="/services" element={
           <Services handleNavClick={handleNavClick} />
         } />
 
-        {/* CAREERS STANDALONE ROUTE */}
         <Route path="/careers" element={
           <CareersPage onApplyJob={openCareerModal} />
         } />
@@ -230,12 +222,8 @@ function AppContent() {
         <Route path="/courses" element={<Courses handleNavClick={handleNavClick} />} />
       </Routes>
 
-      {/* --- FOOTER --- */}
       <Footer onNavClick={handleNavClick} />
 
-      {/* --- FLOATING WIDGETS --- */}
-
-      {/* Back to Top */}
       <AnimatePresence>
         {showBackToTop && (
           <motion.button
@@ -251,7 +239,6 @@ function AppContent() {
         )}
       </AnimatePresence>
 
-      {/* WhatsApp Button */}
       <a
         href="https://wa.me/919171038075?text= "
         target="_blank"
@@ -262,7 +249,6 @@ function AppContent() {
         <FaWhatsapp className="w-8 h-8" />
       </a>
 
-      {/* --- MODALS --- */}
       <AnimatePresence>
         {careerModalOpen && selectedJob && (
           <CareerModal

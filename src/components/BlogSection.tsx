@@ -5,9 +5,10 @@ import { blogPosts } from '../constants/mockData';
 
 interface BlogSectionProps {
   onNavClick: (id: string) => void;
+  onReadPost: (postId: number) => void;
 }
 
-export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
+export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick, onReadPost }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -72,74 +73,11 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
             return matchesSearch && matchesCat;
           });
 
-          const featuredPost = filteredPosts[0];
-          const gridPosts = filteredPosts.slice(1);
-
           return (
             <>
-              {/* Featured Post */}
-              {featuredPost && (
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="max-w-7xl mx-auto mb-10 px-4"
-                >
-                  <div className="bg-white border border-brand-border rounded-[24px] overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 grid grid-cols-1 lg:grid-cols-12">
-                    {/* Image area */}
-                    <div className="col-span-1 lg:col-span-6 h-56 lg:h-full relative overflow-hidden">
-                      <img
-                        src={featuredPost.img}
-                        alt={featuredPost.title}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/30 via-transparent to-transparent" />
-                      <span className="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-full shadow-sm">
-                        Featured Post
-                      </span>
-                    </div>
-
-                    {/* Content area */}
-                    <div className="col-span-1 lg:col-span-6 p-5 lg:p-8 text-left flex flex-col justify-between">
-                      <div>
-                        <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider mb-3">
-                          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{featuredPost.category}</span>
-                          <span className="text-gray-400">•</span>
-                          <span className="text-gray-400">{featuredPost.date}</span>
-                        </div>
-
-                        <h3 
-                          onClick={() => onNavClick('contact-page')}
-                          className="font-display font-black text-brand-navy text-lg sm:text-xl lg:text-2xl leading-snug mb-3 hover:text-brand-cta cursor-pointer transition-colors"
-                        >
-                          {featuredPost.title}
-                        </h3>
-
-                        <p className="text-xs sm:text-sm text-brand-secondary leading-relaxed mb-6">
-                          {featuredPost.desc}
-                        </p>
-                      </div>
-
-                      <div className="flex items-center justify-between border-t border-brand-border pt-4 mt-auto">
-                        <span className="text-xs text-brand-secondary font-semibold uppercase">{featuredPost.readTime}</span>
-                        <button
-                          onClick={() => onNavClick('contact-page')}
-                          className="text-xs font-semibold text-brand-cta hover:underline transition-colors flex items-center gap-1"
-                        >
-                          Read Post <span className="font-light">→</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Blog Grid */}
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {gridPosts.map((post, idx) => (
+                  {filteredPosts.map((post, idx) => (
                     <motion.div
                       key={post.id}
                       initial={{ opacity: 0, y: 20 }}
@@ -149,7 +87,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                       className="bg-white border border-brand-border rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange transition-all duration-300 flex flex-col justify-between h-full group text-left"
                     >
                       <div>
-                        {/* TOP image area */}
                         <div className="h-[220px] relative overflow-hidden">
                           <img
                             src={post.img}
@@ -159,16 +96,13 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                           />
                         </div>
 
-                        {/* CONTENT area */}
                         <div className="p-4 lg:p-5">
                           <div className="flex flex-wrap gap-1.5 items-center text-[11px] mb-2.5">
                             <span className="font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase">{post.category}</span>
-                            <span className="text-gray-400">•</span>
-                            <span className="text-gray-400">{post.date}</span>
                           </div>
 
                           <h3 
-                            onClick={() => onNavClick('contact-page')}
+                            onClick={() => onReadPost(post.id)}
                             className="font-bold text-sm text-brand-navy mb-2 line-clamp-2 hover:text-brand-cta cursor-pointer transition-colors"
                           >
                             {post.title}
@@ -180,11 +114,10 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
                         </div>
                       </div>
 
-                      {/* Bottom row */}
                       <div className="p-4 lg:p-5 pt-0 flex justify-between items-center border-t border-brand-border mt-auto">
                         <span className="text-xs text-brand-secondary uppercase font-semibold">{post.readTime}</span>
                         <button
-                          onClick={() => onNavClick('contact-page')}
+                          onClick={() => onReadPost(post.id)}
                           className="text-xs font-bold text-brand-cta flex items-center gap-1 hover:gap-1.5 transition-all"
                         >
                           Read Post <span className="font-light">→</span>

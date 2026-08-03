@@ -280,69 +280,171 @@ export const portfolioItems: PortfolioItem[] = [
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: '10x Your ROI: The Ultimate Guide to PPC Ads in 2026',
+    title: '10x Your ROI: The Ultimate Guide to PPC Ads',
     desc: 'Discover how modern bidding strategies and smart audience target updates can lower costs and skyrocket conversion rates.',
-    date: 'Aug 15, 2025',
     readTime: '5 min read',
     category: 'PPC Advertising',
     gradient: 'bg-brand-orange',
     icon: <Megaphone className="w-8 h-8 text-white" />,
-    img: '/hero_slide_3.png'
+    img: '/hero_slide_3.png',
+    content: [
+      {
+        heading: 'Why Most PPC Campaigns Waste Money',
+        body: 'The biggest mistake businesses make with pay-per-click advertising is treating it like a one-time setup instead of an ongoing experiment. Ad platforms reward accounts that continuously test headlines, adjust bids, and refine audience segments. Without that discipline, budgets quietly leak into clicks that never convert.'
+      },
+      {
+        heading: 'Smart Bidding Beats Manual Guesswork',
+        body: 'Automated bidding strategies like Target ROAS and Maximize Conversions use machine learning to analyze thousands of signals in real time — device, location, time of day, and past behavior — something manual bid adjustments simply cannot match at scale. The key is feeding these systems clean conversion data so they learn the right patterns quickly.'
+      },
+      {
+        heading: 'Audience Layering for Sharper Targeting',
+        body: 'Instead of targeting broad keywords alone, layering in-market audiences, remarketing lists, and customer match data narrows your reach to people already showing buying intent. This alone can cut cost-per-acquisition significantly while keeping conversion volume steady.'
+      },
+      {
+        heading: 'The Landing Page Connection',
+        body: 'Even a perfectly optimized campaign fails if it sends traffic to a slow or generic landing page. Matching ad messaging exactly to landing page content, and keeping load times under two seconds, consistently lifts conversion rates more than any bid adjustment alone.'
+      }
+    ]
   },
   {
     id: 2,
     title: "Bhopal's Digital Boom: Why Local Businesses Need SEO Now",
     desc: 'How the capital city of MP is transitioning to a digital economy and how local SEO search maps are driving physical store visits.',
-    date: 'Aug 12, 2025',
     readTime: '7 min read',
     category: 'SEO',
     gradient: 'bg-brand-navy',
     icon: <Search className="w-8 h-8 text-white" />,
-    img: '/seo.jpg'
+    img: '/seo.jpg',
+    content: [
+      {
+        heading: 'A City Going Online Fast',
+        body: "Bhopal's consumer base has shifted dramatically toward searching for products and services online before ever stepping into a store. Tier-2 cities across Madhya Pradesh are seeing smartphone penetration and local search volume grow faster than many metro markets, yet most small and mid-sized businesses here still have little to no search presence."
+      },
+      {
+        heading: 'Google Business Profile Is No Longer Optional',
+        body: 'For local businesses, an optimized Google Business Profile often matters more than the website itself. Accurate categories, regularly updated photos, and genuine customer reviews directly influence whether a business appears in the local map pack — the section most people tap first when searching nearby.'
+      },
+      {
+        heading: 'Local Keywords Outperform Generic Ones',
+        body: 'Ranking for "best furniture shop in Bhopal" brings far more qualified footfall than competing for a broad national keyword. Local SEO rewards specificity — neighborhood names, landmark references, and city-specific service pages consistently outperform generic content in both rankings and actual conversions.'
+      },
+      {
+        heading: 'Reviews as a Ranking and Trust Signal',
+        body: 'Search engines increasingly weigh review volume, recency, and response rate as trust signals. Businesses that actively request and respond to reviews see measurable improvements in both map pack visibility and click-through rate from search results.'
+      }
+    ]
   },
   {
     id: 3,
     title: 'Social Media Hacks to Boost Organic Engagement by 200%',
     desc: 'Ditch the algorithmic fatigue. Learn practical strategies to build community, write interactive captions, and optimize reels.',
-    date: 'Aug 09, 2025',
     readTime: '4 min read',
     category: 'Social Media',
     gradient: 'bg-brand-orange',
     icon: <Users className="w-8 h-8 text-white" />,
-    img: '/smm.jpg'
+    img: '/smm.jpg',
+    content: [
+      {
+        heading: 'Stop Chasing the Algorithm, Start Building Community',
+        body: 'Accounts that treat followers as a community rather than an audience consistently outperform those chasing viral formats. Replying to every comment in the first hour, asking genuine questions in captions, and featuring followers in content all signal to the platform — and to people — that the account is worth engaging with.'
+      },
+      {
+        heading: 'Reels Still Reward Native Editing',
+        body: 'Content edited natively inside Instagram or watermark-free from other apps consistently gets more reach than re-shared content with visible watermarks. Platforms prioritize what appears to be created specifically for them, not repurposed leftovers.'
+      },
+      {
+        heading: 'Captions That Ask, Not Tell',
+        body: 'Captions structured as open questions rather than statements generate significantly more comments. More comments in the first 30 minutes after posting is one of the strongest early engagement signals platforms use to decide how widely to distribute a post.'
+      },
+      {
+        heading: 'Consistency Beats Frequency',
+        body: 'Posting three times a week at a consistent time outperforms posting daily at random hours. Predictable posting schedules train both the algorithm and the audience to expect and engage with content regularly.'
+      }
+    ]
   },
   {
     id: 4,
     title: 'Building High-Converting Landing Pages: Design Rules for 2026',
     desc: 'Visual hierarchy, rapid page loading speeds, and clear value statements. Learn what makes a landing page convert visitors into paying leads.',
-    date: 'Aug 05, 2025',
     readTime: '6 min read',
     category: 'Website Development',
     gradient: 'bg-brand-navy',
     icon: <Monitor className="w-8 h-8 text-white" />,
-    img: '/web.jpg'
+    img: '/web.jpg',
+    content: [
+      {
+        heading: 'The First Three Seconds Decide Everything',
+        body: "Visitors form a judgment about whether to stay or leave within the first three seconds of a page loading. That means the headline, hero image, and primary call-to-action need to communicate value instantly, without requiring any scrolling or reading."
+      },
+      {
+        heading: 'Speed Is a Conversion Feature, Not Just a Technical Metric',
+        body: 'Every additional second of load time measurably reduces conversion rates. Compressing images, lazy-loading below-the-fold content, and minimizing third-party scripts are no longer optional technical details — they directly affect how many visitors become leads.'
+      },
+      {
+        heading: 'One Page, One Goal',
+        body: 'The highest-converting landing pages have a single, unambiguous call to action repeated at strategic points, rather than multiple competing links pulling visitors in different directions. Removing navigation menus from dedicated campaign landing pages alone can lift conversions noticeably.'
+      },
+      {
+        heading: 'Social Proof Placed Near the Decision Point',
+        body: 'Testimonials and trust badges work best when placed directly next to the form or button, not buried in a separate section. Visitors need reassurance exactly at the moment they are deciding to act.'
+      }
+    ]
   },
   {
     id: 5,
     title: 'Data-Driven Growth: Transitioning from Branding to ROI Marketing',
     desc: 'Stop spending blindly on vanity metrics. Learn how performance marketing attributes sales back to the source channels accurately.',
-    date: 'Aug 02, 2025',
     readTime: '8 min read',
     category: 'Performance Marketing',
     gradient: 'bg-brand-orange',
     icon: <BarChart2 className="w-8 h-8 text-white" />,
-    img: '/Meta.jpg'
+    img: '/Meta.jpg',
+    content: [
+      {
+        heading: 'Vanity Metrics Feel Good but Say Little',
+        body: 'Likes, impressions, and follower counts are easy to report but rarely correlate with revenue. Performance marketing shifts the conversation from "how many people saw this" to "how much revenue did this channel generate," which is the metric that actually matters to a business owner.'
+      },
+      {
+        heading: 'Attribution Models Matter More Than Ad Spend',
+        body: 'Two businesses can spend identical budgets and get wildly different results simply because one tracks attribution correctly and the other does not. Multi-touch attribution reveals which channels actually influence a purchase decision, rather than crediting only the last click before checkout.'
+      },
+      {
+        heading: 'Customer Lifetime Value Changes the Math',
+        body: 'A channel that looks expensive on a cost-per-acquisition basis can be the most profitable one once customer lifetime value is factored in. Businesses that only look at first-purchase cost often cut their best-performing channels by mistake.'
+      },
+      {
+        heading: 'Building a Feedback Loop',
+        body: 'The businesses that grow fastest treat every campaign as a data source that informs the next one — testing, measuring, and reallocating budget weekly rather than reviewing performance once a quarter.'
+      }
+    ]
   },
   {
     id: 6,
     title: 'How Premium Visual Design Changes Customer Value Perception',
     desc: 'A look into consumer psychology and why premium graphic designs, sleek typography, and layout clarity command higher price tags.',
-    date: 'Jul 28, 2025',
     readTime: '5 min read',
     category: 'Graphic Designing',
     gradient: 'bg-brand-navy',
     icon: <PenTool className="w-8 h-8 text-white" />,
-    img: '/hero_slide_2.png'
+    img: '/hero_slide_2.png',
+    content: [
+      {
+        heading: 'Design Is a Pricing Signal',
+        body: 'Consumers subconsciously judge product and service quality based on visual presentation before they read a single word of copy. Clean layouts, consistent typography, and generous white space signal premium positioning, while cluttered or inconsistent design signals a budget option — regardless of actual quality.'
+      },
+      {
+        heading: 'Typography Carries More Weight Than People Realize',
+        body: 'The same message set in a refined, well-paired typeface is perceived as more trustworthy and higher-value than identical text in a generic or mismatched font. Typography is often the fastest and most cost-effective lever for improving perceived brand quality.'
+      },
+      {
+        heading: 'Color Consistency Builds Recognition and Trust',
+        body: 'Brands that maintain a strict, limited color palette across every touchpoint are remembered and trusted more than those that vary their look from platform to platform. Consistency reduces the cognitive effort needed to recognize and trust a brand at a glance.'
+      },
+      {
+        heading: 'Whitespace Is Not Wasted Space',
+        body: 'Designs with generous spacing between elements are consistently rated as more premium and easier to trust than dense, information-heavy layouts, even when the underlying content is identical. Restraint in design communicates confidence.'
+      }
+    ]
   }
 ];
 

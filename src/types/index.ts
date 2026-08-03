@@ -16,7 +16,6 @@ export interface PortfolioItem {
   category: string;
   filterCategory: string;
   title: string;
-  metric: string;
   desc: string;
   industry: string;
   img: string;

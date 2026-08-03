@@ -230,7 +230,6 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Website Development",
     filterCategory: "Website",
     title: "E-Commerce Website Development",
-    metric: "+95% Lead Conversion",
     desc: "Built a high-converting e-commerce website with optimized product pages and checkout flow.",
     industry: "E-Commerce",
     img: "/web.jpg"
@@ -240,7 +239,6 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Search Engine Optimization",
     filterCategory: "SEO",
     title: "SEO Campaign — Organic Growth",
-    metric: "+120% Organic Traffic",
     desc: "Ranked client on Page 1 of Google for 15+ high-intent keywords within 4 months.",
     industry: "Local Business",
     img: "/SEO Compaign.jpg"
@@ -250,7 +248,6 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Performance Marketing",
     filterCategory: "Meta Ads",
     title: "Meta Ads — Lead Generation",
-    metric: "3.2x ROAS Achieved",
     desc: "Generated 1,200+ qualified leads via Facebook and Instagram ad campaigns in 60 days.",
     industry: "Real Estate",
     img: "/Meta.jpg"
@@ -260,7 +257,7 @@ export const portfolioItems: PortfolioItem[] = [
     category: "PPC Advertising",
     filterCategory: "PPC",
     title: "Google Ads — PPC Campaign",
-    metric: "+48% Conversions",
+
     desc: "Reduced cost-per-click by 35% while increasing conversions through smart bidding strategies.",
     industry: "Healthcare",
     img: "/svc_ppc.png"
@@ -270,7 +267,6 @@ export const portfolioItems: PortfolioItem[] = [
     category: "Graphic Designing",
     filterCategory: "Branding",
     title: "Brand Identity Design",
-    metric: "Complete Brand Overhaul",
     desc: "Created full brand identity including logo, color palette, typography and brand guidelines.",
     industry: "Startup",
     img: "/svc_graphic.png"

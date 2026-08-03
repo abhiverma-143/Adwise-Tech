@@ -8,7 +8,7 @@ interface BlogSectionProps {
   onReadPost: (postId: number) => void;
 }
 
-export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick, onReadPost }) => {
+export const BlogSection: React.FC<BlogSectionProps> = ({onReadPost }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [newsletterEmail, setNewsletterEmail] = useState('');

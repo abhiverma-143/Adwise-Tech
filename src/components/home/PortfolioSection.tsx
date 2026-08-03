@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { TrendingUp } from 'lucide-react';
 import { portfolioItems } from '../../constants/mockData';
 
 interface PortfolioSectionProps {

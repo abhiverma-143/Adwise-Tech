@@ -360,7 +360,7 @@ export const jobOpenings: JobOpening[] = [
     experience: '1+ Years Exp'
   },
   {
-    title: 'React & Node Developer',
+    title: 'E- commerce website and business development',
     type: 'Full-time',
     location: 'Bhopal, MP (Hybrid)',
     experience: '3+ Years Exp'

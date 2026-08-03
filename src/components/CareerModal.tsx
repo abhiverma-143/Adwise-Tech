@@ -127,6 +127,16 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
             />
           </div>
 
+           <div>
+            <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Portfolio Link *</label>
+            <input
+              type="url"
+              required
+              className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
+              placeholder="Portfolio Link..."
+            />
+          </div>
+
           <div>
             <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Cover Letter / Why should we hire you? *</label>
             <textarea
@@ -142,7 +152,7 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={isSubmittingCareer}
-            className="w-full mt-2 bg-brand-orange hover:bg-brand-ctaHover text-white rounded-lg py-3 font-semibold text-sm transition-colors flex items-center justify-center gap-1.5 disabled:opacity-85 shadow-md"
+            className="w-full bg-[#1E3A8A] hover:bg-[#1E40AF] text-white font-bold rounded-full py-3.5 text-sm transition-colors flex items-center justify-center gap-1.5 disabled:opacity-85 shadow-md"
           >
             {isSubmittingCareer ? (
               <>

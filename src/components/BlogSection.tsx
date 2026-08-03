@@ -26,19 +26,9 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onNavClick }) => {
   };
 
   return (
-    <section id="blog" className="bg-white py-16 lg:py-20 relative z-10 border-b border-brand-border transition-colors duration-300">
+    <section id="blog" className="bg-white pt-6 pb-16 lg:pb-20 relative z-10 border-b border-brand-border transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-8 px-4">
-          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
-            Knowledge Hub
-          </span>
-          <h2 className="font-display font-black text-brand-navy text-2xl sm:text-3xl lg:text-4xl leading-tight">
-            Latest Insights & Marketing Strategies
-          </h2>
-        </div>
-
+     
         {/* Search Bar */}
         <div className="max-w-md mx-auto mb-6 px-4 w-full">
           <div className="relative">

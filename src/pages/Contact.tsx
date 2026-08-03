@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
 
           {/* Subtitle */}
           <p className="text-brand-secondary text-sm sm:text-base leading-relaxed max-w-2xl mt-3 mb-0">
-            Have a project in mind? We'd love to hear from you. Send us a message and we'll respond within 24 hours.
+            Have a project in mind? We'd love to hear from you. Send us a message and we'll respond soon.
           </p>
         </div>
       </section>
@@ -35,23 +35,37 @@ export const Contact: React.FC = () => {
             <div className="lg:col-span-5 text-left flex flex-col gap-8">
               <div>
                 <h2 className="font-display font-black text-brand-navy text-3xl mb-3">
-                  Get In Touch
+                 <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Get In Touch</span>
                 </h2>
                 <p className="text-brand-secondary text-sm leading-relaxed">
-                  Your trusted partner for digital growth in Bhopal
+                  Your trusted partner for digital growth in Bhopal and across the World.
                 </p>
               </div>
 
               {/* Cards Stack */}
               <div className="flex flex-col gap-4">
                 {/* Card 1: Visit Us */}
-                <div className="bg-white rounded-xl border border-[#F0F0F0] p-5 shadow-sm flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary flex-shrink-0 mt-0.5">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-[#94A3B8] font-bold uppercase tracking-wider block mb-0.5">VISIT US</span>
-                    <span className="text-xs sm:text-sm font-semibold text-brand-navy">Bhopal, Madhya Pradesh, India</span>
+                <div className="bg-white rounded-xl border border-[#F0F0F0] shadow-sm overflow-hidden">
+                  {/* <div className="p-5 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary flex-shrink-0 mt-0.5">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-[#94A3B8] font-bold uppercase tracking-wider block mb-0.5">VISIT US</span>
+                      <span className="text-xs sm:text-sm font-semibold text-brand-navy">Bhopal, Madhya Pradesh, India</span>
+                    </div>
+                  </div> */}
+
+                  {/* Embedded Map */}
+                  <div className="w-full h-[180px] border-t border-[#F0F0F0]">
+                    <iframe
+                      title="Ad Wise Tech Location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.179846338119!2d77.43282647517114!3d23.236541679024356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c437e3c4f3b03%3A0xf073ac017266a37!2sAD%20WISE%20TECH%20%7C%20Best%20AI%20Digital%20Marketing%20Company%20%7C%20SEO%2C%20SMM%20%26%20PPC%20Ads%20Agency%20in%20Bhopal!5e0!3m2!1sen!2sin!4v1783339639157!5m2!1sen!2sin"
+                      className="w-full h-full"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
                   </div>
                 </div>
 
@@ -79,7 +93,6 @@ export const Contact: React.FC = () => {
                     <a href="mailto:contact@adwisetech.com" className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-accent transition-colors block">
                       contact@adwisetech.com
                     </a>
-                    <span className="text-[10px] text-brand-secondary font-medium mt-0.5 block">We reply within 24 hours</span>
                   </div>
                 </div>
 

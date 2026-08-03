@@ -23,7 +23,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
             </div>
 
             <p className="text-xs text-brand-muted leading-relaxed mt-2 mb-3">
-              Your trusted partner for digital growth in Bhopal.
+              Your Trusted Partner for Digital Growth, From Bhopal to the World.
             </p>
 
             <div className="flex items-center gap-3 mt-2 mb-3">

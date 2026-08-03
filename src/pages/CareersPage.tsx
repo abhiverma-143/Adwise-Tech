@@ -30,7 +30,7 @@ export const CareersPage: React.FC<CareersPageProps> = ({ onApplyJob }) => {
           
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="font-display font-black text-brand-navy text-3xl sm:text-4xl leading-tight mb-4">
-              Current Openings
+              <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Current Openings</span>
             </h2>
             <div className="w-12 h-1 bg-brand-primary rounded mx-auto mt-4" />
           </div>

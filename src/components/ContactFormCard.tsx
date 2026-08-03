@@ -11,7 +11,8 @@ export const ContactFormCard: React.FC = () => {
     phone: '',
     companyName: '',
     service: '',
-    budget: '',
+    customService: '',
+    growthGoal: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,6 +23,10 @@ export const ContactFormCard: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+
+    const serviceInterested = formData.service === 'Other'
+      ? (formData.customService || 'Other')
+      : formData.service;
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -38,8 +43,8 @@ export const ContactFormCard: React.FC = () => {
           email: formData.email,
           phone: formData.phone,
           company_name: formData.companyName,
-          service_interested: formData.service,
-          monthly_budget: formData.budget,
+          service_interested: serviceInterested,
+          growth_goal: formData.growthGoal,
           message: formData.message
         })
       });
@@ -54,7 +59,8 @@ export const ContactFormCard: React.FC = () => {
           phone: '',
           companyName: '',
           service: '',
-          budget: '',
+          customService: '',
+          growthGoal: '',
           message: ''
         });
         setTimeout(() => setSuccess(false), 5000);
@@ -158,26 +164,52 @@ export const ContactFormCard: React.FC = () => {
             <option value="Graphic Designing">Graphic Designing</option>
             <option value="Performance Marketing">Performance Marketing</option>
             <option value="Offline Marketing">Offline Marketing</option>
-            <option value="Other">Other</option>
+            <option value="Digital Marketing Courses">Digital Marketing Courses</option>
+            <option value="Other">Other (please specify)</option>
           </select>
+
+          {/* Custom service input — only shown when "Other" is selected */}
+          <AnimatePresence>
+            {formData.service === 'Other' && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden"
+              >
+                <input
+                  type="text"
+                  name="customService"
+                  required
+                  value={formData.customService}
+                  onChange={handleChange}
+                  className="w-full bg-[#F8F9FC] border border-[#E2E8F0] rounded-lg px-4 py-2.5 text-xs text-brand-navy placeholder-[#94A3B8] focus:outline-none focus:border-[#E91E8C] focus:ring-2 focus:ring-[#E91E8C]/10 transition-colors mt-2"
+                  placeholder="Please tell us what you're looking for..."
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        {/* Row 4 (Monthly Budget Dropdown) */}
+        {/* Row 4 (Growth Goal Dropdown) */}
         <div>
-          <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Monthly Budget *</label>
+          <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">What Growth Are You Looking For? *</label>
           <select
-            name="budget"
+            name="growthGoal"
             required
-            value={formData.budget}
+            value={formData.growthGoal}
             onChange={handleChange}
             className="w-full bg-[#F8F9FC] border border-[#E2E8F0] rounded-lg px-4 py-2.5 text-xs text-brand-navy focus:outline-none focus:border-[#E91E8C] focus:ring-2 focus:ring-[#E91E8C]/10 transition-colors"
           >
-            <option value="">Select a budget range...</option>
-            <option value="Under ₹25,000">Under ₹25,000</option>
-            <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
-            <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
-            <option value="₹1,00,000 - ₹2,50,000">₹1,00,000 - ₹2,50,000</option>
-            <option value="₹2,50,000+">₹2,50,000+</option>
+            <option value="">Select your growth goal...</option>
+            <option value="More Website Traffic">More Website Traffic</option>
+            <option value="More Leads & Inquiries">More Leads & Inquiries</option>
+            <option value="Higher Sales & Conversions">Higher Sales & Conversions</option>
+            <option value="Stronger Brand Awareness">Stronger Brand Awareness</option>
+            <option value="2x-3x Overall Business Growth">2x-3x Overall Business Growth</option>
+            <option value="Complete Digital Transformation">Complete Digital Transformation</option>
+            <option value="Not Sure — Need Guidance">Not Sure — Need Guidance</option>
           </select>
         </div>
 

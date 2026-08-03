@@ -16,6 +16,7 @@ import { BlogPostPage } from './pages/BlogPostPage';
 import { Services } from './pages/Services';
 import { CareersPage } from './pages/CareersPage';
 import { Courses } from './pages/Courses';
+import { Portfolio } from './pages/Portfolio';
 
 import type { JobOpening } from './types';
 
@@ -99,6 +100,11 @@ function AppContent() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
+    if (id === 'portfolio-page') {
+  navigate('/portfolio');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return;
+}
     
 
     if (id === 'services' || id === 'services-page') {
@@ -205,6 +211,10 @@ function AppContent() {
         <Route path="/blog" element={
           <Blog handleNavClick={handleNavClick} />
         } />
+
+        <Route path="/portfolio" element={
+  <Portfolio handleNavClick={handleNavClick} />
+} />
 
         {/* Individual blog post route */}
         <Route path="/blog/:postId" element={

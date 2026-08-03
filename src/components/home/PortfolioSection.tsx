@@ -67,15 +67,6 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ handleNavCli
                         {p.title}
                       </h3>
 
-                      {/* Result metric badge */}
-                      {/* <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        className="inline-flex items-center gap-1.5 bg-[rgba(154,63,230,0.08)] rounded-full px-3 py-1 text-xs font-bold mb-3 cursor-default"
-                      >
-                        <TrendingUp className="w-3 h-3 text-brand-primary" />
-                        <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">{p.metric}</span>
-                      </motion.div> */}
-
                       {/* Short description */}
                       <p className="text-xs text-[#64748B] leading-relaxed mb-4 line-clamp-2">
                         {p.desc}

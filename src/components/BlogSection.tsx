@@ -4,7 +4,6 @@ import { Search, Check, Loader2 } from 'lucide-react';
 import { blogPosts } from '../constants/mockData';
 
 interface BlogSectionProps {
-  onNavClick: (id: string) => void;
   onReadPost: (postId: number) => void;
 }
 

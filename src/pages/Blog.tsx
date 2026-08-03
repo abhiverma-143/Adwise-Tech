@@ -28,12 +28,11 @@ export const Blog: React.FC<BlogProps> = ({ handleNavClick }) => {
       
       {/* Blog Section */}
       <BlogSection 
-        onNavClick={handleNavClick} 
-        onReadPost={(postId) => {
-          navigate(`/blog/${postId}`);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }} 
-      />
+  onReadPost={(postId) => {
+    navigate(`/blog/${postId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }} 
+/>
     </div>
   );
 };

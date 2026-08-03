@@ -6,7 +6,7 @@ interface BlogProps {
   handleNavClick: (id: string) => void;
 }
 
-export const Blog: React.FC<BlogProps> = ({ handleNavClick }) => {
+export const Blog: React.FC<BlogProps> = ({ }) => {
   const navigate = useNavigate();
 
   return (

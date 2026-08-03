@@ -133,7 +133,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ handleNavClick }) => {
               onClick={() => handleNavClick('contact-page')}
               className="bg-brand-cta hover:bg-brand-ctaHover text-white font-bold text-sm rounded-full px-8 py-3 transition-colors"
             >
-              Get a Free Consultation →
+              Get Consultation →
             </button>
           </div>
 

@@ -232,7 +232,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "E-Commerce Website Development",
     desc: "Built a high-converting e-commerce website with optimized product pages and checkout flow.",
     industry: "E-Commerce",
-    img: "/web.jpg"
+    img: "/portfolio/portfolio1.png"
   },
   {
     id: 2,
@@ -241,7 +241,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "SEO Campaign — Organic Growth",
     desc: "Ranked client on Page 1 of Google for 15+ high-intent keywords within 4 months.",
     industry: "Local Business",
-    img: "/SEO Compaign.jpg"
+    img: "/portfolio/portfolio2.png"
   },
   {
     id: 3,
@@ -250,7 +250,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Meta Ads — Lead Generation",
     desc: "Generated 1,200+ qualified leads via Facebook and Instagram ad campaigns in 60 days.",
     industry: "Real Estate",
-    img: "/Meta.jpg"
+    img: "/portfolio/portfolio3.png"
   },
   {
     id: 4,
@@ -260,7 +260,7 @@ export const portfolioItems: PortfolioItem[] = [
 
     desc: "Reduced cost-per-click by 35% while increasing conversions through smart bidding strategies.",
     industry: "Healthcare",
-    img: "/svc_ppc.png"
+    img: "/portfolio/portfolio4.png"
   },
   {
     id: 5,
@@ -269,7 +269,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Brand Identity Design",
     desc: "Created full brand identity including logo, color palette, typography and brand guidelines.",
     industry: "Startup",
-    img: "/svc_graphic.png"
+    img: "/portfolio/portfolio5.png"
   }
 ];
 

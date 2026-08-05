@@ -228,7 +228,7 @@ export const Services: React.FC<ServicesProps> = () => {
     },
     {
       q: "Can you redesign our existing website?",
-      a: "Absolutely. We build responsive, lightning-fast, and SEO-optimized websites designed specifically to turn casual visitors into paying customers."
+      a: "We build to be replaced by We Design/Engineer/Develop, and SEO-optimized websites designed specifically to turn casual visitors into paying customers."
     }
   ];
 

@@ -63,12 +63,12 @@ const heroSubtext = [
 ];
 
 const chips = [
-  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "social-media" },
+  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "smm" },
   { icon: <Search className="w-3 h-3 text-brand-primary" />, label: "SEO", id: "seo" },
-  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc-ads" },
-  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "website-dev" },
+  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc" },
+  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "web-dev" },
   { icon: <Palette className="w-3 h-3 text-brand-primary" />, label: "Graphic Design", id: "graphic-design" },
-  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance" },
+  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance-marketing" },
   { icon: <Megaphone className="w-3 h-3 text-brand-primary" />, label: "Offline Marketing", id: "offline-marketing" },
   { icon: <GraduationCap className="w-3 h-3 text-brand-primary" />, label: "Courses", id: "courses" },
 ];

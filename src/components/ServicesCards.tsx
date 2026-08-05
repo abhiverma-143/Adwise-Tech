@@ -20,7 +20,7 @@ export const servicesList = [
     desc: "Technical SEO, On & Off Page SEO, content optimization and link-building to improve organic visibility.",
     bullets: [
       "Technical SEO & website audits",
-      "On-page optimization",
+      "On-page optimization", 
       "Link building and authority development",
       "Optimized content that ranks"
     ],

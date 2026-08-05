@@ -282,7 +282,7 @@ export const blogPosts: BlogPost[] = [
     category: 'PPC Advertising',
     gradient: 'bg-brand-orange',
     icon: <Megaphone className="w-8 h-8 text-white" />,
-    img: '/hero_slide_3.png',
+    img: '/blog/blog1.png',
     content: [
       {
         heading: 'Why Most PPC Campaigns Waste Money',
@@ -338,7 +338,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Social Media',
     gradient: 'bg-brand-orange',
     icon: <Users className="w-8 h-8 text-white" />,
-    img: '/smm.jpg',
+    img: '/blog/blog3.png',
     content: [
       {
         heading: 'Stop Chasing the Algorithm, Start Building Community',
@@ -360,13 +360,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    title: 'Building High-Converting Landing Pages: Design Rules for 2026',
+    title: 'Building High-Converting Landing Pages',
     desc: 'Visual hierarchy, rapid page loading speeds, and clear value statements. Learn what makes a landing page convert visitors into paying leads.',
     readTime: '6 min read',
     category: 'Website Development',
     gradient: 'bg-brand-navy',
     icon: <Monitor className="w-8 h-8 text-white" />,
-    img: '/web.jpg',
+    img: '/blog/blog4.png',
     content: [
       {
         heading: 'The First Three Seconds Decide Everything',
@@ -394,7 +394,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Performance Marketing',
     gradient: 'bg-brand-orange',
     icon: <BarChart2 className="w-8 h-8 text-white" />,
-    img: '/Meta.jpg',
+    img: '/blog/blog5.png',
     content: [
       {
         heading: 'Vanity Metrics Feel Good but Say Little',
@@ -422,7 +422,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Graphic Designing',
     gradient: 'bg-brand-navy',
     icon: <PenTool className="w-8 h-8 text-white" />,
-    img: '/hero_slide_2.png',
+    img: '/blog/blog6.png',
     content: [
       {
         heading: 'Design Is a Pricing Signal',

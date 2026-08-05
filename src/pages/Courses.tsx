@@ -28,7 +28,7 @@ const courses: Course[] = [
     level: 'Beginner',
     mode: 'Live Online',
     highlights: ['Keyword research & strategy', 'Technical SEO audits', 'Local SEO for Bhopal businesses', 'Certificate on completion'],
-    img: '/seo.jpg',
+    img: '/courses/course1.png',
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const courses: Course[] = [
     level: 'Intermediate',
     mode: 'Live Online',
     highlights: ['Campaign setup & bid strategy', 'Retargeting & A/B testing', 'Real client ad account practice', 'Certificate on completion'],
-    img: '/Meta.jpg',
+    img: '/courses/course2.png',
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const courses: Course[] = [
     level: 'Beginner',
     mode: 'In-Person, Bhopal',
     highlights: ['Content calendar planning', 'Reels & short-form strategy', 'Community management', 'Certificate on completion'],
-    img: '/smm.jpg',
+    img: '/courses/course3.png',
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ const courses: Course[] = [
     level: 'Intermediate',
     mode: 'Live Online',
     highlights: ['Landing page design principles', 'WordPress & React basics', 'Speed & mobile optimization', 'Certificate on completion'],
-    img: '/web.jpg',
+    img: '/courses/course4.png',
   },
   {
     id: 5,
@@ -72,7 +72,7 @@ const courses: Course[] = [
     level: 'Beginner',
     mode: 'In-Person, Bhopal',
     highlights: ['Logo & brand identity design', 'Social media creative kits', 'Ad banner design principles', 'Certificate on completion'],
-    img: '/svc_graphic.png',
+    img: '/courses/course5.png',
   },
   {
     id: 6,
@@ -83,7 +83,7 @@ const courses: Course[] = [
     level: 'Advanced',
     mode: 'Live Online',
     highlights: ['Full-funnel campaign design', 'Marketing automation basics', 'ROI & analytics tracking', 'Certificate on completion'],
-    img: '/svc_performance.png',
+    img: '/courses/course6.png',
   },
 ];
 

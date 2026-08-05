@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Clock } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { blogPosts } from '../constants/mockData';
 
 interface BlogPostDetailProps {
@@ -45,10 +45,6 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ postId, onBack, 
           <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">
             {post.category}
           </span>
-          <span className="w-1 h-1 rounded-full bg-gray-300" />
-          <span className="text-brand-secondary inline-flex items-center gap-1 normal-case font-semibold">
-            <Clock className="w-3 h-3" /> {post.readTime}
-          </span>
         </div>
 
         <h1 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-brand-navy leading-tight mb-6">
@@ -87,7 +83,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ postId, onBack, 
             onClick={() => onNavClick('contact-page')}
             className="bg-brand-cta hover:bg-brand-ctaHover text-white font-bold text-sm rounded-full px-6 py-3 transition-colors"
           >
-            Get a Free Consultation →
+            Get Consultation →
           </button>
         </div>
       </div>

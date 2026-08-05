@@ -165,10 +165,10 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export const stats: Stat[] = [
-  { icon: <Briefcase className="w-5 h-5 text-brand-orange" />, value: 250, suffix: '+', label: 'Projects Completed' },
-  { icon: <Smile className="w-5 h-5 text-brand-orange" />, value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { icon: <Users className="w-5 h-5 text-brand-orange" />, value: 12, suffix: 'M+', label: 'Campaign Reach' },
-  { icon: <TrendingUp className="w-5 h-5 text-brand-orange" />, value: 150, suffix: '%', label: 'Average Lead Growth' }
+  { icon: <Briefcase className="w-5 h-5 text-brand-orange" />, value: 235, suffix: '+', label: 'Projects Completed' },
+  { icon: <Smile className="w-5 h-5 text-brand-orange" />, value: 91, suffix: '%', label: 'Client Satisfaction' },
+  { icon: <Users className="w-5 h-5 text-brand-orange" />, value: 50, suffix: 'M+', label: 'Campaign Reach' },
+  { icon: <TrendingUp className="w-5 h-5 text-brand-orange" />, value: 10, suffix: '%', label: 'Average Lead Growth' }
 ];
 
 export const testimonials: Testimonial[] = [

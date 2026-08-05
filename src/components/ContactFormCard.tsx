@@ -87,7 +87,7 @@ export const ContactFormCard: React.FC = () => {
         Send Us a Message
       </h3>
       <p className="text-xs text-gray-400 mb-6">
-        Fill the form below and our team will get back to you within 24 hours.
+        Fill the form below and our team will get back to you soon.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -251,7 +251,7 @@ export const ContactFormCard: React.FC = () => {
         <div className="flex justify-center items-center gap-3 sm:gap-4 border-t border-gray-100 pt-4 text-[10px] text-[#94A3B8] font-medium">
           <span>🔒 100% Confidential</span>
           <span className="w-1.5 h-1.5 rounded-full bg-gray-250" />
-          <span>⚡ Reply in 24 hours</span>
+          <span>⚡Always Ready To Assist</span>
           <span className="w-1.5 h-1.5 rounded-full bg-gray-250" />
           <span>✅ Free Consultation</span>
         </div>

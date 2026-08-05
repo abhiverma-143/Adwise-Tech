@@ -87,7 +87,7 @@ export const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ postId, onBack, 
             onClick={() => onNavClick('contact-page')}
             className="bg-brand-cta hover:bg-brand-ctaHover text-white font-bold text-sm rounded-full px-6 py-3 transition-colors"
           >
-            Get Consultation →
+            Get a Free Consultation →
           </button>
         </div>
       </div>

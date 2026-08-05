@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import {
   MapPin,
   Star,
@@ -19,10 +20,30 @@ interface HeroSectionProps {
 }
 
 const heroSlides = [
-  { img: '/hero_slide_1.png', label: 'SEO & Analytics Dashboard', tag: 'Search Engine Optimization' },
-  { img: '/hero_slide_2.png', label: 'Social Media Growth Strategy', tag: 'Social Media Marketing' },
-  { img: '/smm.jpg', label: 'Certified Digital Marketing Courses', tag: 'Learn & Grow' },
-  { img: '/svc_web.png', label: 'Fast, Conversion-Ready Websites', tag: 'Website Development' },
+  {
+    // TODO: replace with a real SEO / search-ranking animation from lottiefiles.com
+    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    label: 'SEO & Analytics Dashboard',
+    tag: 'Search Engine Optimization'
+  },
+  {
+    // TODO: replace with a real Social Media growth animation
+    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    label: 'Social Media Growth Strategy',
+    tag: 'Social Media Marketing'
+  },
+  {
+    // TODO: replace with a real Courses / learning animation
+    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    label: 'Certified Digital Marketing Courses',
+    tag: 'Learn & Grow'
+  },
+  {
+    // TODO: replace with a real Website Development animation
+    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    label: 'Fast, Conversion-Ready Websites',
+    tag: 'Website Development'
+  },
 ];
 
 const gradientText = "bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent";
@@ -42,12 +63,12 @@ const heroSubtext = [
 ];
 
 const chips = [
-  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "smm" },
+  { icon: <Smartphone className="w-3 h-3 text-brand-primary" />, label: "Social Media", id: "social-media" },
   { icon: <Search className="w-3 h-3 text-brand-primary" />, label: "SEO", id: "seo" },
-  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc" },
-  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "web-dev" },
+  { icon: <DollarSign className="w-3 h-3 text-brand-primary" />, label: "PPC Ads", id: "ppc-ads" },
+  { icon: <Globe className="w-3 h-3 text-brand-primary" />, label: "Website Dev", id: "website-dev" },
   { icon: <Palette className="w-3 h-3 text-brand-primary" />, label: "Graphic Design", id: "graphic-design" },
-  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance-marketing" },
+  { icon: <TrendingUp className="w-3 h-3 text-brand-primary" />, label: "Performance", id: "performance" },
   { icon: <Megaphone className="w-3 h-3 text-brand-primary" />, label: "Offline Marketing", id: "offline-marketing" },
   { icon: <GraduationCap className="w-3 h-3 text-brand-primary" />, label: "Courses", id: "courses" },
 ];
@@ -66,7 +87,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
     <section id="home" className="relative bg-white pt-16 pb-24 lg:pb-36 overflow-hidden transition-colors duration-300">
       <div className="absolute inset-0 dot-grid opacity-75 z-0" />
 
-      {/* Decorative gradient wave — bottom left — fixed so it stays visible across the whole home page scroll */}
+      {/* Decorative gradient wave — fixed to the bottom of the viewport so it stays visible while scrolling */}
       <svg
         className="fixed -bottom-1 left-0 w-full h-[130px] lg:h-[190px] z-0 pointer-events-none opacity-40"
         viewBox="0 0 1512 320"
@@ -86,27 +107,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
         </defs>
       </svg>
 
-      {/* Decorative gradient corner — bottom right — fixed for the same reason */}
-      <div
-        className="fixed -bottom-24 -right-24 w-72 h-72 rounded-full z-0 pointer-events-none opacity-40"
-        style={{ background: 'linear-gradient(135deg, #C08AF0 0%, #FF7A9C 100%)' }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
 
           {/* Left Column — order-2 on mobile so image shows first */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="order-2 lg:order-1 lg:col-span-7 text-left flex flex-col justify-center relative z-10"
+            className="order-2 lg:order-1 lg:col-span-7 text-left flex flex-col justify-center relative z-20"
           >
             {/* Location Badge — static */}
             <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-4 py-1.5 inline-flex items-center gap-2 w-max mb-3">
               <MapPin className="w-3 h-3 text-brand-primary" />
               <span className="text-[11px] font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase tracking-wider">
-                Digital Marketing Agency, Bhopal
+                Digital Marketing Firm to design your Revenue Graph
               </span>
             </div>
 
@@ -201,35 +216,41 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column — Image Carousel — now visible on mobile too, order-1 so it shows first */}
+          {/* Right Column — Lottie Animation Carousel — extends left, behind the text column, with a fade mask */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.15 }}
-            className="order-1 lg:order-2 flex lg:col-span-5 flex-col gap-4"
+            className="order-1 lg:order-2 flex lg:col-span-5 lg:-ml-20 flex-col gap-4 relative z-10"
           >
-            {/* Image slide area */}
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border border-brand-border bg-[#F8F9FC]" style={{ aspectRatio: '4/3' }}>
+            {/* Visual slide area */}
+            <div className="relative w-full rounded-2xl overflow-visible" style={{ minHeight: '420px' }}>
+
               <AnimatePresence mode="wait">
                 {heroSlides.map((slide, i) =>
                   i === heroSlideIdx ? (
                     <motion.div
-                      key={slide.img}
+                      key={i}
                       initial={{ opacity: 0, x: 60 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -60 }}
                       transition={{ duration: 0.45, ease: "easeInOut" }}
-                      className="absolute inset-0"
+                      className="absolute inset-0 flex flex-col justify-center"
                     >
-                      <img
-                        src={slide.img}
-                        alt={slide.label}
-                        className="w-full h-full object-cover"
-                      />
-                      {/* Label overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-brand-navy/80 to-transparent px-5 py-4">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent block mb-0.5">{slide.tag}</span>
-                        <p className="text-white font-bold text-sm leading-tight">{slide.label}</p>
+                      <div className="relative w-full flex flex-col items-center">
+                        <div className="w-full max-w-[560px] h-[380px] flex items-center justify-center">
+                          <DotLottieReact
+                            src={slide.lottieSrc}
+                            loop
+                            autoplay
+                            style={{ width: '100%', height: '100%' }}
+                          />
+                        </div>
+                        {/* Label */}
+                        <div className="text-center mt-2">
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent block mb-0.5">{slide.tag}</span>
+                          <p className="text-brand-navy font-bold text-sm leading-tight">{slide.label}</p>
+                        </div>
                       </div>
                     </motion.div>
                   ) : null
@@ -238,7 +259,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex gap-2 justify-center">
+            <div className="flex gap-2 justify-center relative z-20">
               {heroSlides.map((_, i) => (
                 <button
                   key={i}

@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: 'Do you offer any placement or internship support?',
-    a: "Top-performing students get the opportunity for a paid internship with our in-house marketing team, working on real client campaigns.",
+    a: "Yes, Productive students steal the chance to work with our In-House team on real client campaigns for a paid Internship",
   },
 ];
 
@@ -123,10 +123,10 @@ export const Courses: React.FC<CoursesProps> = ({ handleNavClick }) => {
       <section className="bg-white py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
           <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
-            Ad Wise Academy
+            AD Wise Academy
           </span>
           <h1 className="font-display font-black text-3xl lg:text-4xl text-brand-navy tracking-tight leading-tight">
-            Learn Digital Marketing <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">from Practitioners</span>
+            Learn Digital Marketing <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">from Experts</span>
           </h1>
           <p className="text-brand-secondary text-sm sm:text-base leading-relaxed max-w-2xl mt-3 mb-0">
             Hands-on courses in SEO, PPC, Social Media, Web Development and Design — taught by the same team running live campaigns for 50+ Bhopal businesses.

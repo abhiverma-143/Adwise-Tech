@@ -83,10 +83,12 @@ export const BlogSection: React.FC<BlogSectionProps> = ({onReadPost }) => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: idx * 0.08 }}
-                      className="bg-white border border-brand-border rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange transition-all duration-300 flex flex-col justify-between h-full group text-left"
+                      onClick={() => onReadPost(post.id)}
+                      className="bg-white border border-brand-border rounded-[20px] overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange transition-all duration-300 flex flex-col justify-between h-full group text-left cursor-pointer"
                     >
                       <div>
-                        <div className="h-[220px] relative overflow-hidden">
+                        {/* Image — object-contain so the full image always shows, never cropped */}
+                        <div className="h-[220px] relative overflow-hidden bg-[#F8F9FC] flex items-center justify-center">
                           <img
                             src={post.img}
                             alt={post.title}
@@ -101,8 +103,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({onReadPost }) => {
                           </div>
 
                           <h3 
-                            onClick={() => onReadPost(post.id)}
-                            className="font-bold text-sm text-brand-navy mb-2 line-clamp-2 hover:text-brand-cta cursor-pointer transition-colors"
+                            className="font-bold text-sm text-brand-navy mb-2 line-clamp-2 group-hover:text-brand-cta transition-colors"
                           >
                             {post.title}
                           </h3>
@@ -113,14 +114,10 @@ export const BlogSection: React.FC<BlogSectionProps> = ({onReadPost }) => {
                         </div>
                       </div>
 
-                      <div className="p-4 lg:p-5 pt-0 flex justify-between items-center border-t border-brand-border mt-auto">
-                        <span className="text-xs text-brand-secondary uppercase font-semibold">{post.readTime}</span>
-                        <button
-                          onClick={() => onReadPost(post.id)}
-                          className="text-xs font-bold text-brand-cta flex items-center gap-1 hover:gap-1.5 transition-all"
-                        >
+                      <div className="p-4 lg:p-5 pt-0 flex justify-end items-center border-t border-brand-border mt-auto">
+                        <span className="text-xs font-bold text-brand-cta flex items-center gap-1 group-hover:gap-1.5 transition-all">
                           Read Post <span className="font-light">→</span>
-                        </button>
+                        </span>
                       </div>
                     </motion.div>
                   ))}

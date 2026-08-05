@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { 
   Search, Share2, MousePointer, Monitor, Palette, TrendingUp, Megaphone,
   CheckCircle, ChevronDown, ChevronUp
@@ -16,7 +17,8 @@ const servicesData = [
     id: "service-seo",
     number: "01",
     icon: Search,
-    image: "/svc_seo.png",
+    // TODO: replace with a real SEO animation from lottiefiles.com (search "SEO" or "search ranking")
+    lottieSrc: "https://lottie.host/26b1b714-a213-4f41-bfa2-a5a1e9dc58b1/9yfWwiIGdd.lottie",
     name: "Search Engine Optimization",
     tagline: "Rank higher. Get found. Grow organically.",
     whatWeOffer: [
@@ -34,9 +36,10 @@ const servicesData = [
     id: "service-social-media",
     number: "02",
     icon: Share2,
-    image: "/svc_smm.png",
+    // TODO: replace with a real Social Media animation (search "social media marketing")
+    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
     name: "Social Media Marketing",
-    tagline: "Build your brand. Grow your audience. Drive leads.",
+    tagline: "Build your brand. Attract your audience. Drive leads.",
     whatWeOffer: [
       "Social media strategy",
       "Content creation (posts, reels)",
@@ -45,14 +48,15 @@ const servicesData = [
       "Influencer collaboration",
       "Story and reel production",
       "Analytics and reporting",
-      "Brand voice development"
+      "Brand Tone development"
     ],
   },
   {
     id: "service-ppc",
     number: "03",
     icon: MousePointer,
-    image: "/svc_ppc.png",
+    // TODO: replace with a real PPC/Ads animation (search "PPC" or "ad campaign")
+    lottieSrc: "https://lottie.host/02d6c5a0-b10b-4996-8793-68a39f769d68/hrdsXTvkwx.lottie",
     name: "Pay-Per-Click Advertising",
     tagline: "Get instant visibility. Pay only for results.",
     whatWeOffer: [
@@ -70,9 +74,10 @@ const servicesData = [
     id: "service-website",
     number: "04",
     icon: Monitor,
-    image: "/svc_web.png",
+    // TODO: replace with a real Website Dev animation (search "web development" or "website design")
+    lottieSrc: "https://lottie.host/c0739adc-30b6-4b1a-9a34-0907542071eb/HIcQq4i0Qx.lottie",
     name: "Website Design & Development",
-    tagline: "Beautiful websites that convert visitors into customers.",
+    tagline: "Attractive websites that convert visitors into customers.",
     whatWeOffer: [
       "Custom website design",
       "WordPress development",
@@ -88,9 +93,10 @@ const servicesData = [
     id: "service-graphic",
     number: "05",
     icon: Palette,
-    image: "/svc_graphic.png",
+    // TODO: replace with a real Graphic Design animation (search "graphic design" or "branding")
+    lottieSrc: "https://lottie.host/ebe6fc50-92f6-4295-bbd5-e2e4155ecad7/2wZc5S069v.lottie",
     name: "Graphic Design & Branding",
-    tagline: "Make your brand impossible to ignore.",
+    tagline: "Make your brand identity visible and bold.",
     whatWeOffer: [
       "Logo design",
       "Brand identity",
@@ -106,7 +112,8 @@ const servicesData = [
     id: "service-performance",
     number: "06",
     icon: TrendingUp,
-    image: "/svc_performance.png",
+    // TODO: replace with a real Performance Marketing animation (search "growth chart" or "analytics")
+    lottieSrc: "https://lottie.host/a856d196-2dc9-433d-948f-3099db4c9b4d/zBPCRGIoIi.lottie",
     name: "Performance Marketing",
     tagline: "Data-driven growth that scales profitably.",
     whatWeOffer: [
@@ -124,7 +131,8 @@ const servicesData = [
     id: "service-offline",
     number: "07",
     icon: Megaphone,
-    image: "/svc_offline.png",
+    // TODO: replace with a real Offline Marketing animation (search "megaphone" or "event marketing")
+    lottieSrc: "https://lottie.host/67db2827-7fa9-4f7e-bc86-6dc2c54f8bc0/6MihBzmOMx.lottie",
     name: "Offline Marketing",
     tagline: "Real-world presence that builds real trust.",
     whatWeOffer: [
@@ -216,7 +224,7 @@ export const Services: React.FC<ServicesProps> = () => {
     },
     {
       q: "How do you measure campaign success and ROI?",
-      a: "We set up comprehensive analytics tracking for leads, calls, sales, and conversions. You will receive detailed monthly performance reports detailing exact cost-per-lead and overall ROI."
+      a: "We set up comprehensive analytics tracking for leads, calls, sales, and conversions, looping in  the same  monthly performance reports detailing exact cost-per-lead and overall ROI."
     },
     {
       q: "Can you redesign our existing website?",
@@ -253,7 +261,7 @@ export const Services: React.FC<ServicesProps> = () => {
       </div>
 
       {/* SECTION 1 — HERO */}
-      <section className="bg-white py-12 relative overflow-hidden">
+      <section className="bg-white py-8 sm:py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
           <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
             OUR SERVICES
@@ -277,29 +285,29 @@ export const Services: React.FC<ServicesProps> = () => {
             <div
               key={service.id}
               id={service.id}
-              className={`py-16 bg-white border-b border-gray-100 last:border-0 transition-shadow duration-500 ${
+              className={`py-10 sm:py-16 bg-white border-b border-gray-100 last:border-0 transition-shadow duration-500 ${
                 isActive ? 'shadow-[inset_4px_0_0_0_theme(colors.brand.primary)]' : ''
               }`}
             >
-              <div className="max-w-6xl mx-auto px-6">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 
                 {/* Header of Block */}
-                <div className={`relative w-full text-left border-l-4 pl-5 mb-8 transition-colors duration-300 ${
+                <div className={`relative w-full text-left border-l-4 pl-4 sm:pl-5 mb-6 sm:mb-8 transition-colors duration-300 ${
                   isActive ? 'border-brand-primary' : 'border-gray-200'
                 }`}>
-                  <span className="absolute right-0 top-0 text-6xl font-black text-gray-100 select-none">
-                    {service.number}
-                  </span>
-                  <h2 className="font-display font-black text-3xl text-brand-navy">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-primary/15 to-brand-accent/15 flex items-center justify-center mb-4">
+                    <service.icon className="w-5 h-5 text-brand-primary" />
+                  </div>
+                  <h2 className="font-display font-black text-2xl sm:text-3xl text-brand-navy">
                     {service.name}
                   </h2>
-                  <p className="text-base text-gray-400 mt-2">
+                  <p className="text-sm sm:text-base text-gray-400 mt-2">
                     {service.tagline}
                   </p>
                 </div>
 
                 {/* Two Column content */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start mt-6 sm:mt-10">
                   
                   {/* Left Column (50% / col-span-6) */}
                   <div className={`lg:col-span-6 flex flex-col gap-6 text-left ${isEven ? 'lg:order-last' : 'lg:order-first'}`}>
@@ -326,13 +334,13 @@ export const Services: React.FC<ServicesProps> = () => {
                   {/* Right Column (50% / col-span-6) */}
                   <div className={`lg:col-span-6 w-full flex flex-col gap-5 lg:sticky lg:top-24 ${isEven ? 'lg:order-first' : 'lg:order-last'}`}>
                     
-                    {/* Service Image Illustration */}
-                    <div className="w-full rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white flex justify-center items-center">
-                      <img 
-                        src={service.image} 
-                        alt={service.name} 
-                        loading="lazy"
-                        className="w-full h-auto object-cover max-h-[300px] rounded-2xl"
+                    {/* Service Animation (Lottie) — replaces the static image */}
+                    <div className="w-full rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white flex justify-center items-center h-[220px] sm:h-[300px]">
+                      <DotLottieReact
+                        src={service.lottieSrc}
+                        loop
+                        autoplay
+                        style={{ width: '100%', height: '100%' }}
                       />
                     </div>
 
@@ -365,8 +373,8 @@ export const Services: React.FC<ServicesProps> = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section className="bg-white py-16 border-t border-gray-100 relative z-10">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="bg-white py-10 sm:py-16 border-t border-gray-100 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
               FAQ

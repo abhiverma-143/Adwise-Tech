@@ -265,7 +265,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ handle
         {/* Bottom CTA below testimonials */}
         <div className="text-center mt-10 flex flex-col items-center gap-4">
           <p className="text-sm text-brand-secondary font-medium">
-            Join 50+ businesses growing with Ad Wise Tech
+            Join 50+ businesses growing with AD Wise Tech
           </p>
           <motion.button
             whileHover={{ scale: 1.02 }}

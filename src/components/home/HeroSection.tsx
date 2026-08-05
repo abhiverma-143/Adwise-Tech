@@ -22,25 +22,25 @@ interface HeroSectionProps {
 const heroSlides = [
   {
     // TODO: replace with a real SEO / search-ranking animation from lottiefiles.com
-    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    lottieSrc: "https://lottie.host/fe5f8e8a-b503-4b1b-aa88-d819126c64ef/GMoK7thlRK.lottie",
     label: 'SEO & Analytics Dashboard',
     tag: 'Search Engine Optimization'
   },
   {
     // TODO: replace with a real Social Media growth animation
-    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    lottieSrc: "https://lottie.host/b55621eb-634d-493e-b79c-4204d03c05bb/xw2j8r3hs3.json",
     label: 'Social Media Growth Strategy',
     tag: 'Social Media Marketing'
   },
   {
     // TODO: replace with a real Courses / learning animation
-    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    lottieSrc: "https://lottie.host/d8ec1e04-82d1-4d33-9380-60f7de14f493/uuilreVYhY.lottie",
     label: 'Certified Digital Marketing Courses',
     tag: 'Learn & Grow'
   },
   {
     // TODO: replace with a real Website Development animation
-    lottieSrc: "https://lottie.host/28809f13-ee43-4a6d-98fb-696a0d12619c/bHjMJE4ssp.lottie",
+    lottieSrc: "https://lottie.host/e816f6bf-b234-4aff-a2f9-219c1672568a/Ks5nbTkhHl.lottie",
     label: 'Fast, Conversion-Ready Websites',
     tag: 'Website Development'
   },

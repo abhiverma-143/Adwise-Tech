@@ -120,7 +120,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             {/* Location Badge — static */}
             <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-4 py-1.5 inline-flex items-center gap-2 w-max mb-3">
               <MapPin className="w-3 h-3 text-brand-primary" />
-              <span className="text-[11px] font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase tracking-wider">
+              <span className="text-[9px] sm:text-[11px] font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase tracking-wider whitespace-nowrap overflow-hidden text-ellipsis">
                 Digital Marketing Firm to design your Revenue Graph
               </span>
             </div>

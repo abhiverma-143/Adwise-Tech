@@ -130,7 +130,7 @@ export const teamMembers: TeamMember[] = [
     skills: ["Strategy", "SEO", "Growth"],
     bio: "Visionary leader with expertise in digital strategy and business development. Passionate about helping brands achieve measurable online growth.",
     gradient: 'bg-brand-orange',
-    image: '/prachi.png'
+    
   },
   {
     name: 'Pratham Kesharwani',
@@ -140,28 +140,9 @@ export const teamMembers: TeamMember[] = [
     skills: ["Operations", "PPC", "Analytics"],
     bio: "Operations expert focused on delivering systematic growth solutions. Specializes in performance marketing and campaign optimization.",
     gradient: 'bg-brand-navy',
-    image: '/pratham.png'
+    
   },
-  {
-    name: 'Team Member',
-    role: 'Social Media Manager',
-    department: 'Marketing',
-    initials: 'SM',
-    skills: ["Instagram", "Facebook", "Content"],
-    bio: "Creative social media specialist crafting engaging content strategies that grow brand presence and audience engagement across all platforms.",
-    gradient: 'bg-brand-orange',
-    image: '/social_media.png'
-  },
-  {
-    name: 'Team Member',
-    role: 'SEO Specialist',
-    department: 'Technical',
-    initials: 'SS',
-    skills: ["On-Page SEO", "Link Building", "Analytics"],
-    bio: "Technical SEO expert driving organic traffic growth through data-driven keyword strategies and website optimization techniques.",
-    gradient: 'bg-brand-navy',
-    image: '/seo_specialist.png'
-  }
+  
 ];
 
 export const stats: Stat[] = [

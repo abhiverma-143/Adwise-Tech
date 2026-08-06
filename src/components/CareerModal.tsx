@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2, Check } from 'lucide-react';
 import type { JobOpening } from '../types';
 
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
+
 interface CareerModalProps {
   isOpen: boolean;
   job: JobOpening | null;
@@ -10,23 +12,84 @@ interface CareerModalProps {
 }
 
 export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }) => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    location: '',
+    experience: '',
+    resumeLink: '',
+    portfolioLink: '',
+    coverLetter: ''
+  });
   const [isSubmittingCareer, setIsSubmittingCareer] = useState(false);
   const [careerSuccess, setCareerSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   if (!isOpen || !job) return null;
 
-  const handleCareerSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleCareerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmittingCareer(true);
-    setTimeout(() => {
+    setError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Job Application: ${job.title} - AD Wise Tech`,
+          from_name: formData.fullName,
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          position_applied: job.title,
+          current_location: formData.location,
+          relevant_experience_years: formData.experience,
+          resume_link: formData.resumeLink,
+          portfolio_link: formData.portfolioLink,
+          cover_letter: formData.coverLetter
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setCareerSuccess(true);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          location: '',
+          experience: '',
+          resumeLink: '',
+          portfolioLink: '',
+          coverLetter: ''
+        });
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => {
+          setCareerSuccess(false);
+          onClose();
+        }, 3000);
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
       setIsSubmittingCareer(false);
-      setCareerSuccess(true);
-      (e.target as HTMLFormElement).reset();
-      setTimeout(() => {
-        setCareerSuccess(false);
-        onClose();
-      }, 3000);
-    }, 1500);
+    }
   };
 
   return (
@@ -68,7 +131,10 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
             <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Full Name *</label>
             <input
               type="text"
+              name="fullName"
               required
+              value={formData.fullName}
+              onChange={handleChange}
               className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
               placeholder="e.g. Amit Sen"
             />
@@ -79,7 +145,10 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
               <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Email Address *</label>
               <input
                 type="email"
+                name="email"
                 required
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
                 placeholder="e.g. amit@example.com"
               />
@@ -88,7 +157,10 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
               <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Phone Number *</label>
               <input
                 type="tel"
+                name="phone"
                 required
+                value={formData.phone}
+                onChange={handleChange}
                 className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
                 placeholder="e.g. +91 98930 11111"
               />
@@ -100,7 +172,10 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
               <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Current Location *</label>
               <input
                 type="text"
+                name="location"
                 required
+                value={formData.location}
+                onChange={handleChange}
                 className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
                 placeholder="e.g. Bhopal"
               />
@@ -109,8 +184,11 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
               <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Relevant Experience (Years) *</label>
               <input
                 type="number"
+                name="experience"
                 step="0.5"
                 required
+                value={formData.experience}
+                onChange={handleChange}
                 className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
                 placeholder="e.g. 2.5"
               />
@@ -121,7 +199,10 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
             <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Resume Link *</label>
             <input
               type="url"
+              name="resumeLink"
               required
+              value={formData.resumeLink}
+              onChange={handleChange}
               className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
               placeholder="Link to GDrive, Dropbox or LinkedIn PDF resume..."
             />
@@ -131,7 +212,10 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
             <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Portfolio Link *</label>
             <input
               type="url"
+              name="portfolioLink"
               required
+              value={formData.portfolioLink}
+              onChange={handleChange}
               className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors"
               placeholder="Portfolio Link..."
             />
@@ -140,8 +224,11 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
           <div>
             <label className="block text-[11px] font-bold text-brand-dark uppercase tracking-wider mb-1.5">Cover Letter / Why should we hire you? *</label>
             <textarea
+              name="coverLetter"
               required
               rows={3}
+              value={formData.coverLetter}
+              onChange={handleChange}
               className="w-full bg-gray-50 border border-gray-250 rounded-lg px-4 py-2.5 text-xs text-brand-dark focus:outline-none focus:border-brand-orange focus:bg-white transition-colors resize-none"
               placeholder="Tell us about your achievements and fit for this role..."
             />
@@ -182,6 +269,12 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, job, onClose }
               </motion.div>
             )}
           </AnimatePresence>
+
+          {error && (
+            <div className="bg-red-500/10 border border-red-500/20 text-red-600 p-3 rounded-lg text-xs font-semibold mt-2">
+              {error}
+            </div>
+          )}
         </form>
       </motion.div>
     </div>

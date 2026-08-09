@@ -118,8 +118,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             className="order-2 lg:order-1 lg:col-span-7 text-left flex flex-col justify-center relative z-20"
           >
             {/* Location Badge — static */}
-            <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-4 py-1.5 inline-flex items-center gap-2 w-max mb-3">
-              <MapPin className="w-3 h-3 text-brand-primary" />
+            <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-3 sm:px-4 py-1.5 inline-flex items-center gap-2 max-w-full mb-3">
+              <MapPin className="w-3 h-3 text-brand-primary flex-shrink-0" />
               <span className="text-[9px] sm:text-[11px] font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase tracking-wider whitespace-nowrap overflow-hidden text-ellipsis">
                 Digital Marketing Firm to design your Revenue Graph
               </span>
@@ -223,8 +223,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.15 }}
             className="order-1 lg:order-2 flex lg:col-span-5 lg:-ml-20 flex-col gap-4 relative z-10"
           >
-            {/* Visual slide area */}
-            <div className="relative w-full rounded-2xl overflow-visible" style={{ minHeight: '420px' }}>
+            {/* Visual slide area — smaller min-height on mobile since the animation itself is smaller there */}
+            <div className="relative w-full rounded-2xl overflow-visible min-h-[260px] sm:min-h-[420px]">
 
               <AnimatePresence mode="wait">
                 {heroSlides.map((slide, i) =>
@@ -238,7 +238,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
                       className="absolute inset-0 flex flex-col justify-center"
                     >
                       <div className="relative w-full flex flex-col items-center">
-                        <div className="w-full max-w-[560px] h-[380px] flex items-center justify-center">
+                        {/* Animation box — smaller on mobile, full size on sm+ */}
+                        <div className="w-full max-w-[240px] h-[200px] sm:max-w-[560px] sm:h-[380px] flex items-center justify-center">
                           <DotLottieReact
                             src={slide.lottieSrc}
                             loop
@@ -248,8 +249,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
                         </div>
                         {/* Label */}
                         <div className="text-center mt-2">
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent block mb-0.5">{slide.tag}</span>
-                          <p className="text-brand-navy font-bold text-sm leading-tight">{slide.label}</p>
+                          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-brand-accent block mb-0.5">{slide.tag}</span>
+                          <p className="text-brand-navy font-bold text-xs sm:text-sm leading-tight">{slide.label}</p>
                         </div>
                       </div>
                     </motion.div>

@@ -104,10 +104,10 @@ export const TeamMembers: React.FC<TeamMembersProps> = ({ onNavClick }) => {
                     ))}
                   </div>
 
-                  {/* Social icons row */}
+                  {/* Social icons row — each member's own links from mockData */}
                   <div className="mt-auto pt-1 flex justify-center gap-3">
                     <a
-                      href="https://linkedin.com"
+                      href={m.linkedin}
                       target="_blank"
                       rel="noreferrer"
                       className="w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:bg-brand-cta hover:text-white flex items-center justify-center transition-all duration-300"
@@ -115,7 +115,7 @@ export const TeamMembers: React.FC<TeamMembersProps> = ({ onNavClick }) => {
                       <FaLinkedin className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://instagram.com"
+                      href={m.instagram}
                       target="_blank"
                       rel="noreferrer"
                       className="w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:text-white hover:bg-gradient-to-tr hover:from-[#feda75] hover:via-[#d62976] hover:to-[#4f5bd5] flex items-center justify-center transition-all duration-300"

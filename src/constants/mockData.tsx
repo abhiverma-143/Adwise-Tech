@@ -123,24 +123,26 @@ export const whyChooseFeatures: WhyChooseFeature[] = [
 
 export const teamMembers: TeamMember[] = [
   {
-    name: 'Prachi Shrivas',
+    name: 'Pracchi R. Shrivas',
     role: 'Founder & CEO',
     department: 'Leadership',
     initials: 'PS',
     skills: ["Strategy", "SEO", "Growth"],
-    bio: "Visionary leader with expertise in digital strategy and business development. Passionate about helping brands achieve measurable online growth.",
+    bio: "As Founder & CEO of AD Wise Tech, Prachi Shrivas leads the agency with a strong focus on digital marketing, branding, and sustainable business growth. Her results-driven approach combines creativity, data, and innovation to build strong digital presence, scalable strategies, and measurable outcomes.",
     gradient: 'bg-brand-orange',
-    
+    linkedin: 'https://www.linkedin.com/in/prachi-shrivas-32070a2a8?utm_source=share_via&utm_content=profile&utm_medium=member_android', 
+    instagram: 'https://www.instagram.com/prachi01_s?igsh=MXFuMWlkYTJqdWp1ZQ=='
   },
   {
     name: 'Pratham Kesharwani',
-    role: 'Founder & COO',
+    role: 'Co-Founder & COO',
     department: 'Leadership',
     initials: 'PK',
     skills: ["Operations", "PPC", "Analytics"],
-    bio: "Operations expert focused on delivering systematic growth solutions. Specializes in performance marketing and campaign optimization.",
+    bio: "Pratham Kesharwani is the Co-Founder & Chief Operating Officer (COO) of AD Wise Tech, specializing in performance marketing and paid advertising.With expertise in Meta Ads, Google Ads, and campaign optimization, he helps businesses achieve sustainable growth through strategic, data-driven marketing solutions.",
     gradient: 'bg-brand-navy',
-    
+    linkedin: 'https://www.linkedin.com/in/pratham-kesharwani-performance-marketer?utm_source=share_via&utm_content=profile&utm_medium=member_android', 
+    instagram: 'https://www.instagram.com/'
   },
   
 ];

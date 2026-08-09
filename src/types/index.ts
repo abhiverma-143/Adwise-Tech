@@ -52,6 +52,8 @@ export interface TeamMember {
   bio: string;
   gradient: string;
   image?: string;
+  linkedin: string;
+  instagram: string;
 }
 
 export interface WhyChooseFeature {

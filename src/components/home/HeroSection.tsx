@@ -210,7 +210,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
               <span className="text-xs lg:text-sm text-brand-secondary font-medium">50+ Happy Clients</span>
               <div className="hidden sm:block h-6 w-px bg-brand-border" />
               <div className="flex items-center gap-1.5 text-xs lg:text-sm text-brand-secondary font-medium">
-                <span>Bhopal's Trusted Agency</span>
+                <span>Trusted by Clients Worldwide</span>
                 <CheckCircle className="w-3.5 h-3.5 lg:w-4 lg:h-4 text-brand-primary flex-shrink-0" />
               </div>
             </motion.div>

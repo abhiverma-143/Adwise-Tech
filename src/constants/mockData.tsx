@@ -142,7 +142,7 @@ export const teamMembers: TeamMember[] = [
     bio: "Pratham Kesharwani is the Co-Founder & Chief Operating Officer (COO) of AD Wise Tech, specializing in performance marketing and paid advertising.With expertise in Meta Ads, Google Ads, and campaign optimization, he helps businesses achieve sustainable growth through strategic, data-driven marketing solutions.",
     gradient: 'bg-brand-navy',
     linkedin: 'https://www.linkedin.com/in/pratham-kesharwani-performance-marketer?utm_source=share_via&utm_content=profile&utm_medium=member_android', 
-    instagram: 'https://www.instagram.com/'
+    instagram: 'https://www.instagram.com/mr._kesharwani_ji'
   },
   
 ];

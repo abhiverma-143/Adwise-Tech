@@ -118,7 +118,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ handleNavClick }) => {
             className="order-2 lg:order-1 lg:col-span-7 text-left flex flex-col justify-center relative z-20"
           >
             {/* Location Badge — static */}
-            <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-3 sm:px-4 py-1.5 inline-flex items-center gap-2 max-w-full mb-3">
+            <div className="bg-transparent border-[1.5px] border-brand-primary rounded-full px-3 sm:px-4 py-1.5 inline-flex items-center gap-2 w-max max-w-full mb-3">
               <MapPin className="w-3 h-3 text-brand-primary flex-shrink-0" />
               <span className="text-[9px] sm:text-[11px] font-bold bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent uppercase tracking-wider whitespace-nowrap overflow-hidden text-ellipsis">
                 Digital Marketing Firm to design your Revenue Graph

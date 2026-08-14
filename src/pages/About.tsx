@@ -1,18 +1,68 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { TeamMembers } from '../components/TeamMembers';
+import { motion, useInView } from 'framer-motion';
+import { VisionMission } from '../components/VisionMission';
 
 interface AboutProps {
   handleNavClick: (id: string) => void;
 }
 
-export const About: React.FC<AboutProps> = ({ handleNavClick }) => {
+interface CountUpStatProps {
+  target: number;
+  suffix?: string;
+  decimals?: number;
+  label: string;
+  duration?: number;
+}
+
+const CountUpStat: React.FC<CountUpStatProps> = ({ target, suffix = '', decimals = 0, label, duration = 1.4 }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-20px' });
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let start: number | null = null;
+    let frameId: number;
+
+    const step = (timestamp: number) => {
+      if (start === null) start = timestamp;
+      const progress = Math.min((timestamp - start) / (duration * 1000), 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(eased * target);
+      if (progress < 1) {
+        frameId = requestAnimationFrame(step);
+      } else {
+        setValue(target);
+      }
+    };
+
+    frameId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frameId);
+  }, [isInView, target, duration]);
+
+  return (
+    <div className="flex flex-col items-center sm:items-start">
+      <span
+        ref={ref}
+        className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xl"
+      >
+        {value.toFixed(decimals)}{suffix}
+      </span>
+      <span className="text-[11px] text-brand-secondary font-medium mt-1">{label}</span>
+    </div>
+  );
+};
+
+export const About: React.FC<AboutProps> = ({}) => {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.hash === '#our-team') {
+    if (location.hash === '#our-team' || location.hash === '#vision-mission') {
       const timer = setTimeout(() => {
-        const element = document.getElementById('our-team');
+        const targetId = location.hash === '#vision-mission' ? 'vision-mission' : 'our-team';
+        const element = document.getElementById(targetId);
         if (element) {
           const offset = 80;
           const bodyRect = document.body.getBoundingClientRect().top;
@@ -29,56 +79,60 @@ export const About: React.FC<AboutProps> = ({ handleNavClick }) => {
   return (
     <div className="transition-all duration-300">
       {/* About Hero */}
-      <section className="bg-white py-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
-          <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
-            ABOUT US
-          </span>
-          <h1 className="font-display font-black text-3xl lg:text-4xl text-brand-navy tracking-tight leading-tight">
-            Bhopal's Leading <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Growth Agency</span>
-          </h1>
-          <p className="text-brand-secondary text-sm sm:text-base leading-relaxed max-w-xl mt-3 mb-0">
-            We partner with ambitious companies to build scalable marketing engines that drive transparent, measurable ROI.
-          </p>
-        </div>
-      </section>
+      <section className="relative bg-white pt-14 pb-10 overflow-hidden">
+        <div className="absolute inset-0 dot-grid opacity-40 z-0" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
-      {/* Who We Are & Mission Section */}
-      <section className="bg-white py-16 border-b border-brand-border z-10 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Who We Are column */}
-            <div className="text-left">
-              <span className="text-[#E91E8C] font-bold text-xs uppercase tracking-widest block mb-3">
-                Who We Are
+            {/* Left Column — Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
+              className="lg:col-span-5 text-center lg:text-left flex flex-col items-center lg:items-start"
+            >
+              <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent font-bold text-xs uppercase tracking-widest block mb-3">
+                ABOUT US
               </span>
-              <h2 className="font-display font-black text-brand-navy text-2xl sm:text-3xl leading-tight mb-4">
-                Trusted Digital Partner
-              </h2>
-              <p className="text-brand-secondary text-sm sm:text-base leading-relaxed">
-                Welcome to AD Wise Tech, your trusted partner for digital growth in Bhopal. We specialize in SEO, Social Media Marketing, PPC Advertising, and Website Design & Development. Our expert team crafts powerful strategies to enhance your online presence, drive quality traffic, and boost your business growth.
+              <h1 className="font-display font-black text-3xl lg:text-5xl text-brand-navy tracking-tight leading-tight">
+                Bhopal's Leading <span className="bg-gradient-to-r from-brand-primary to-brand-accent bg-clip-text text-transparent">Growth Agency</span>
+              </h1>
+              <p className="text-brand-secondary text-sm sm:text-base leading-relaxed max-w-xl mt-4 mb-8">
+                We partner with ambitious companies to build scalable marketing engines that drive transparent, measurable ROI.
               </p>
-            </div>
-            {/* Mission column */}
-            <div className="text-left flex flex-col justify-center">
-              <span className="text-[#E91E8C] font-bold text-xs uppercase tracking-widest block mb-3">
-                Our Mission
-              </span>
-              <h2 className="font-display font-black text-brand-navy text-2xl sm:text-3xl leading-tight mb-4">
-                Empowering Local Businesses to Scale
-              </h2>
-              <p className="text-[#64748B] text-sm sm:text-base leading-relaxed italic border-l-4 border-[#E91E8C] pl-4 py-2 bg-[rgba(233,30,140,0.05)] rounded-r-xl">
-                "To craft powerful digital strategies that enhance online presence, drive quality traffic, and boost business growth for every client we serve."
-              </p>
-            </div>
+
+              {/* Trust stat strip — animated count-up */}
+              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-x-8 gap-y-3 border-t border-brand-border pt-6 w-full max-w-xl">
+                <CountUpStat target={100} suffix="+" label="Happy Clients" />
+                <div className="h-8 w-px bg-brand-border" />
+                <CountUpStat target={7} label="Core Services" />
+                <div className="h-8 w-px bg-brand-border" />
+                <CountUpStat target={4.9} decimals={1} suffix="/5" label="Client Rating" />
+              </div>
+            </motion.div>
+
+            {/* Right Column — Office Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, ease: 'easeOut', delay: 0.15 }}
+              className="lg:col-span-7"
+            >
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border border-brand-border" style={{ aspectRatio: '16/11' }}>
+                <img
+                  src="/about-office.webp"
+                  alt="Ad Wise Tech office"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* Team Members Section */}
-      <div id="our-team">
-        <TeamMembers onNavClick={handleNavClick} />
-      </div>
+      {/* Vision & Mission (Purpose, Cards, Commitment, Values) Section */}
+      <VisionMission />
     </div>
   );
 };

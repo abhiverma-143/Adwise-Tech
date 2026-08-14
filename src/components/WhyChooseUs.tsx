@@ -90,7 +90,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ onNavClick }) => {
             </div>
 
             <button
-              onClick={() => onNavClick('about-page-team')}
+              onClick={() => onNavClick('about-page')}
               className="w-max bg-brand-cta hover:bg-brand-ctaHover text-white rounded-full px-7 py-3.5 font-bold text-sm shadow-md transition-colors"
             >
               Learn More About Us →

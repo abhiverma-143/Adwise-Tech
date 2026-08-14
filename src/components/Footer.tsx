@@ -55,9 +55,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
               {/* Item 2 */}
               <div className="flex items-center gap-2 text-left">
                 <Phone className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
-                <a href="tel:+919171038075,+91-8319793311" className="text-xs text-brand-muted hover:text-brand-orange transition-colors">
-                  +91-91710 38075 <br />
-                   +91-8319793311 
+                <a href="tel:+919171038075" className="text-xs text-brand-muted hover:text-brand-orange transition-colors">
+                  +91-91710 38075
                 </a>
               </div>
 

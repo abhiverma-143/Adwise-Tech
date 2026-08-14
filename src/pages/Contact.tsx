@@ -76,9 +76,8 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-[10px] text-[#94A3B8] font-bold uppercase tracking-wider block mb-0.5">CALL US</span>
-                    <a href="tel:+919171038075, +91-8319793311 " className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-primary transition-colors block">
-                      +91-91710 38075 <br />
-                       +91-8319793311 
+                    <a href="tel:+919171038075" className="text-xs sm:text-sm font-semibold text-brand-navy hover:text-brand-primary transition-colors block">
+                      +91-91710 38075
                     </a>
                     {/* <span className="text-[10px] text-brand-secondary font-medium mt-0.5 block">Mon-Sat, 10AM-7PM</span> */}
                   </div>
